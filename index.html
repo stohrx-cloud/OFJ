@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ocean Fine Jewellery — Burlington</title>
+<meta name="description" content="Authorized Longines, G-SHOCK, Rado, Hamilton, Tissot, Mido and Seiko retailer, plus custom jewellery and lab-grown diamonds, in Burlington, Ontario.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1B24; --cream:#F5EFE6; --paper:#FBF8F3; --gold:#C29A55; --gold-soft:#E2C48B;
+  --deep:#04121C; --line:rgba(14,27,36,.08);
+  --serif:"Cormorant Garamond", Georgia, serif; --sans:"Plus Jakarta Sans", system-ui, sans-serif;
+  --spring:cubic-bezier(.22,1,.36,1); --press:cubic-bezier(.32,.72,0,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--deep);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+em{font-style:italic;font-weight:300}
+.skip{position:fixed;left:16px;top:-60px;z-index:30;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:99px;transition:top .4s var(--spring)}
+.skip:focus{top:16px}
+body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:28px;
+  padding:8px 8px 8px 26px;border-radius:99px;background:rgba(6,20,30,.55);color:var(--cream);
+  backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 50px -20px rgba(0,0,0,.35);white-space:nowrap}
+.brand{font-family:var(--serif);font-size:1.35rem;letter-spacing:.04em;line-height:1}
+.brand span{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;margin-left:8px;opacity:.7;vertical-align:middle}
+.nav nav{display:flex;gap:22px;font-size:.82rem;letter-spacing:.04em}
+.nav nav a{opacity:.75;transition:opacity .4s var(--spring)}
+.nav nav a:hover{opacity:1}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:7px 7px 7px 24px;border-radius:99px;font-size:.88rem;font-weight:500;letter-spacing:.02em;
+  background:var(--ink);color:var(--cream);transition:transform .5s var(--press),background .5s var(--spring);cursor:pointer;border:0;font-family:inherit}
+.btn i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);transition:transform .6s var(--spring)}
+.btn i svg,.link i svg{width:16px;height:16px}
+.btn:hover i{transform:translate(2px,-2px) scale(1.06)}
+.btn:active{transform:scale(.97)}
+.btn.gold{background:var(--gold);color:var(--deep)}
+.btn.gold i{background:rgba(4,18,28,.12)}
+.btn.gold:hover{background:var(--gold-soft)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn.ghost i{background:rgba(127,127,127,.15)}
+.btn.sm{padding:5px 5px 5px 18px;font-size:.8rem}
+.btn.sm i{width:30px;height:30px}
+.eyebrow{display:inline-block;padding:5px 14px;border-radius:99px;font-size:.66rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
+  border:1px solid currentColor;opacity:.8;margin-bottom:26px}
+.link{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:500;white-space:nowrap}
+.link i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;border:1px solid currentColor;transition:transform .6s var(--spring),background .6s var(--spring)}
+.link i svg{width:14px;height:14px}
+.link:hover i{transform:translate(2px,-2px);background:rgba(127,127,127,.12)}
+
+/* ---------- the dive ---------- */
+.dive{position:relative;height:1150vh}
+.stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;
+  background:linear-gradient(180deg,#C9D3D6 0%,#F2E6D2 62%,#2E6E7C 64%,#0B3445 100%)}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.6s var(--spring)}
+#gl.ready{opacity:1}
+.panels{position:absolute;inset:0;pointer-events:none}
+.panel{position:absolute;left:7vw;top:50%;width:min(540px,44vw);opacity:0;will-change:transform,opacity}
+.panel.hero{top:44%;opacity:1;transform:translateY(-50%)}
+.panel.right{left:auto;right:9vw}
+.panel.on{pointer-events:auto}
+.panel h1,.panel h2{font-family:var(--serif);font-weight:300;line-height:.98;letter-spacing:-.015em}
+.panel h1{font-size:clamp(3rem,6vw,5.8rem);margin-bottom:24px}
+.panel h2{font-size:clamp(2.4rem,4.6vw,4.4rem);margin-bottom:24px}
+.panel h1 em{color:#A97E3A}
+.panel p{font-size:1.02rem;max-width:44ch;opacity:.85}
+.panel .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.panel .featured{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:.78rem;letter-spacing:.02em;opacity:.8}
+.panel .featured b{font-weight:600}
+.panel .featured:hover{opacity:1}
+.panel.light{color:var(--cream);text-shadow:0 2px 30px rgba(1,10,16,.45)}
+.panel.light h2 em{color:var(--gold-soft)}
+.panel .num{font-family:var(--serif);font-size:1rem;letter-spacing:.2em;color:var(--gold-soft);display:block;margin-bottom:14px}
+.panel .facts{list-style:none;margin-top:22px;display:grid;gap:6px;font-size:.92rem;opacity:.85}
+.cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;
+  font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);transition:opacity .6s var(--spring)}
+.cue::after{content:"";width:1px;height:46px;background:linear-gradient(var(--cream),transparent);animation:cue 2.2s var(--spring) infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.gauge{position:absolute;right:34px;top:22vh;height:56vh;width:1px;background:rgba(245,239,230,.18);color:var(--cream);opacity:0;transition:opacity .6s var(--spring)}
+.gauge i{position:absolute;left:0;top:0;width:1px;height:100%;background:var(--gold-soft);transform-origin:top;transform:scaleY(0)}
+.gauge span{position:absolute;right:12px;top:0;transform:translateY(-50%);font-size:.68rem;letter-spacing:.18em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.gauge small{position:absolute;right:12px;font-size:.56rem;letter-spacing:.22em;opacity:.5;text-transform:uppercase;white-space:nowrap}
+.gauge small:first-of-type{top:-26px}.gauge small:last-of-type{bottom:-26px}
+.hint{position:absolute;right:34px;bottom:26px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.7;transition:opacity .6s var(--spring)}
+
+/* ---------- sections ---------- */
+.wrap{width:min(1240px,100% - 32px);margin:0 auto}
+section.s{padding:clamp(96px,13vw,160px) 0}
+.head{max-width:720px;margin-bottom:clamp(40px,6vw,72px)}
+.head h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,5.4vw,4.8rem);line-height:1;letter-spacing:-.015em;margin-bottom:22px}
+.head p{font-size:1.05rem;opacity:.75;max-width:52ch}
+.salon{background:linear-gradient(180deg,#01070c,var(--deep) 30%,#062030);color:var(--cream)}
+.salon .head h2 em{color:var(--gold-soft)}
+.shell{border-radius:2rem;padding:6px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}
+.core{height:100%;border-radius:calc(2rem - 6px);box-shadow:inset 0 1px 1px rgba(255,255,255,.1)}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font:inherit;font-size:.8rem;font-weight:500;letter-spacing:.06em;color:var(--cream);background:transparent;border:1px solid rgba(245,239,230,.22);
+  border-radius:99px;padding:10px 20px;cursor:pointer;transition:background .5s var(--spring),color .5s var(--spring),border-color .5s var(--spring)}
+.filters button[aria-pressed="true"]{background:var(--cream);color:var(--deep);border-color:var(--cream)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{transition:opacity .6s var(--spring),transform .6s var(--spring)}
+.product[hidden]{display:none}
+.product .core{background:#F3F2EF;color:var(--ink);display:flex;flex-direction:column;overflow:hidden;box-shadow:inset 0 1px 1px #fff}
+.product figure{position:relative;aspect-ratio:1;overflow:hidden}
+.product img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform 1.1s var(--spring)}
+.product:hover img{transform:scale(1.06) rotate(-2deg)}
+.product .tag{position:absolute;left:16px;top:16px;font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:5px 10px;border-radius:99px;background:rgba(14,27,36,.06)}
+.product .meta{padding:6px 22px 22px;display:flex;flex-direction:column;gap:4px;flex:1}
+.product small{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#8A6A2E}
+.product h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;line-height:1.1}
+.product .ref{font-size:.74rem;opacity:.55}
+.product .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px}
+.product .price{font-weight:500;font-size:.95rem;font-variant-numeric:tabular-nums}
+.product.feat{grid-column:span 2;grid-row:span 2}
+.product.feat h3{font-size:2.2rem}
+.center{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:52px}
+.note{text-align:center;font-size:.74rem;opacity:.5;margin-top:22px}
+
+.services{background:var(--cream)}
+.services .head h2 em,.visit .head h2 em{color:var(--gold)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.light-shell{border-radius:2rem;padding:6px;background:rgba(14,27,36,.035);border:1px solid var(--line)}
+.light-shell .core{background:var(--paper);box-shadow:inset 0 1px 1px #fff,0 40px 70px -40px rgba(14,27,36,.22);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column}
+.bento .big{grid-column:span 2}
+.roman{font-family:var(--serif);font-size:1rem;letter-spacing:.2em;color:var(--gold);margin-bottom:auto;padding-bottom:56px}
+.bento h3,.loc h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:1.05;margin-bottom:12px}
+.bento p{opacity:.7;max-width:46ch;font-size:.95rem}
+.brands{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em}
+
+.visit{background:linear-gradient(180deg,var(--cream),#EADFCB)}
+.locs{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.loc .core{min-height:360px}
+.loc h3{font-size:clamp(2.6rem,5vw,4.4rem);font-weight:300}
+.loc small{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:auto;padding-bottom:40px}
+.loc p{opacity:.75;margin-bottom:6px}
+.loc dl{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:.92rem;margin:14px 0 26px;opacity:.8}
+.loc dt{font-weight:500}
+.loc .link{margin-top:auto}
+
+.book{background:var(--deep);color:var(--cream)}
+.book .head h2 em{color:var(--gold-soft)}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:start}
+form .core{background:linear-gradient(165deg,#0D2737,#06161F);padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:flex;flex-direction:column;gap:8px;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+label.full{grid-column:1/-1}
+input,select,textarea{font:inherit;font-size:.95rem;letter-spacing:normal;text-transform:none;color:var(--cream);background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px;transition:border-color .4s var(--spring),background .4s var(--spring);color-scheme:dark}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-soft);background:rgba(255,255,255,.07)}
+select option{background:var(--deep)}
+textarea{min-height:110px;resize:vertical}
+form .btn{grid-column:1/-1;justify-self:start;margin-top:6px}
+.thanks{grid-column:1/-1;font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft)}
+.contact-list{list-style:none;margin-top:30px;display:grid;gap:10px;font-size:.95rem;opacity:.8}
+
+footer{background:#01070c;color:rgba(245,239,230,.6);padding:56px 0 40px;font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+footer .brand{color:var(--cream)}
+
+.js .reveal{opacity:0;transform:translateY(48px);filter:blur(8px);transition:opacity 1.1s var(--spring),transform 1.1s var(--spring),filter 1.1s var(--spring);transition-delay:var(--dl,0s)}
+.js .reveal.in{opacity:1;transform:none;filter:none}
+
+@media (max-width:1000px){
+  .nav nav{display:none}
+  .products{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:767px){
+  .nav{gap:14px;padding-left:18px;top:12px}
+  .brand span{display:none}
+  .panel,.panel.hero,.panel.right{left:16px;right:16px;width:auto;top:13vh;transform:none}
+  .panel h1{font-size:clamp(2.4rem,10.5vw,3.2rem);margin-bottom:14px}
+  .panel h2{font-size:2.2rem;margin-bottom:14px}
+  .panel p{font-size:.9rem}
+  .panel .ctas{margin-top:18px;gap:8px;flex-wrap:nowrap}
+  .panel .btn{padding:5px 5px 5px 16px;font-size:.8rem;gap:10px}
+  .panel .btn i{width:30px;height:30px}
+  .panel .eyebrow{margin-bottom:14px}
+  .panel .featured{display:none}
+  .cue,.gauge,.hint{display:none}
+  .products{gap:10px}
+  .product .meta{padding:4px 14px 16px}
+  .product h3{font-size:1.15rem}
+  .product .link span{display:none}
+  .bento,.locs,.book-grid{grid-template-columns:1fr}
+  .bento .big{grid-column:auto}
+  form .core{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important}
+  .js .reveal{transition:none}
+}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><path id="i-arrow" d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></defs>
+</svg>
+
+<a class="skip" href="#shop">Skip to the watches</a>
+
+<header class="nav">
+  <a class="brand" href="#top">Ocean<span>Fine Jewellery</span></a>
+  <nav aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#visit">Visit</a>
+    <a href="#book">Book</a>
+  </nav>
+  <a class="btn gold sm" href="#shop"><span>Shop watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+</header>
+
+<main>
+<section class="dive" id="top" aria-label="Introduction">
+  <div class="stage" id="stage">
+    <canvas id="gl" aria-label="A Longines HydroConquest falling into the ocean" role="img"></canvas>
+
+    <div class="panels">
+      <article class="panel hero" data-in="-1" data-out=".05">
+        <span class="eyebrow">Burlington · Celebrating 5 years</span>
+        <h1>Treasures worth <em>diving</em> for.</h1>
+        <p>An authorized retailer of Longines, G-SHOCK, Rado, Hamilton, Tissot, Mido and Seiko, with custom jewellery and lab-grown diamonds.</p>
+        <div class="ctas">
+          <a class="btn" href="#shop"><span>Shop watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+          <a class="btn ghost" href="#book"><span>Book a visit</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+        </div>
+        <a class="featured link" href="#shop">On the right: <b>Longines HydroConquest 42 mm</b> · $2,050 <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+      </article>
+      <article class="panel light" data-in=".13" data-out=".24">
+        <span class="num">I — The House</span>
+        <h2>Built from scratch, <em>five stars</em> since day one.</h2>
+        <p>Five years ago Ocean Fine Jewellery opened its doors in Burlington. Today it is a trusted part of the community, with only five-star Google reviews since the very first day.</p>
+      </article>
+      <article class="panel light right" data-in=".46" data-out=".55">
+        <span class="num">II — Timepieces</span>
+        <h2>From G-SHOCK to <em>Legend Diver.</em></h2>
+        <p>Eight authorized brands under one roof, from a $149 G-SHOCK to a Longines Legend Diver. Every watch is sized and fitted in-boutique, with a wide range of straps to make it yours.</p>
+      </article>
+      <article class="panel light right" data-in=".58" data-out=".655">
+        <span class="num">III — Bespoke</span>
+        <h2>Custom jewellery, <em>lab-grown</em> brilliance.</h2>
+        <p>Design a piece from scratch, or choose from high-quality lab-grown diamonds, set in rings, pendants, earrings and bracelets.</p>
+      </article>
+      <article class="panel light" data-in=".86" data-out="2">
+        <span class="num">IV — Visit</span>
+        <h2>One boutique, <em>on Fairview.</em></h2>
+        <ul class="facts">
+          <li>3-4150 Fairview St, Burlington</li>
+          <li><a href="tel:+19053333553">905-333-3553</a></li>
+        </ul>
+        <div class="ctas">
+          <a class="btn gold" href="#shop"><span>Explore the watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+          <a class="btn ghost" href="#book"><span>Book an appointment</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+        </div>
+      </article>
+    </div>
+
+    <div class="gauge" id="gauge" aria-hidden="true"><i></i><small>Surface</small><span>0 m</span><small>300 m</small></div>
+    <div class="cue" id="cue" aria-hidden="true">Scroll to dive</div>
+    <div class="hint" id="hint" aria-hidden="true">Move across the water</div>
+  </div>
+</section>
+
+<section class="s salon" id="shop">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="eyebrow">The Watch Salon</span>
+      <h2>Longines &amp; G-SHOCK, <em>in stock now.</em></h2>
+      <p>A selection from the boutique's current catalogue. Every piece can be tried on, sized and fitted in Burlington.</p>
+    </header>
+    <div class="filters reveal" role="group" aria-label="Filter by brand">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="longines" aria-pressed="false">Longines</button>
+      <button type="button" data-f="gshock" aria-pressed="false">G-SHOCK</button>
+    </div>
+    <div class="products">
+      <article class="shell product feat reveal" data-brand="longines"><div class="core">
+        <figure><img src="assets/products/76740449.jpg" alt="Longines HydroConquest 42 mm, blue dial, steel bracelet" loading="lazy"><span class="tag">As seen above</span></figure>
+        <div class="meta"><small>Longines</small><h3>HydroConquest 42 mm</h3><span class="ref">L3.769.4.96.6 · Quartz · 300 m</span>
+          <div class="row"><span class="price">$2,050</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l37694966.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="gshock"><div class="core">
+        <figure><img src="assets/products/77729407.jpg" alt="G-SHOCK GA2100-1A1, all black" loading="lazy"></figure>
+        <div class="meta"><small>G-SHOCK</small><h3>GA-2100 Black</h3><span class="ref">GA2100-1A1</span>
+          <div class="row"><span class="price">$149</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/ga2100-1a1.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="longines" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/77700927.jpg" alt="Longines Legend Diver 59, black dial, mesh bracelet" loading="lazy"></figure>
+        <div class="meta"><small>Longines</small><h3>Legend Diver 59</h3><span class="ref">L37954599</span>
+          <div class="row"><span class="price">$5,400</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l37954599.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="gshock"><div class="core">
+        <figure><img src="assets/products/73360878.jpg" alt="G-SHOCK GM2100YMG-9A, gold-tone metal bezel" loading="lazy"></figure>
+        <div class="meta"><small>G-SHOCK</small><h3>GM-2100 Gold</h3><span class="ref">GM2100YMG-9A</span>
+          <div class="row"><span class="price">$425</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/gm2100ymg-9a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="longines" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/59292268.jpg" alt="Longines HydroConquest GMT" loading="lazy"></figure>
+        <div class="meta"><small>Longines</small><h3>HydroConquest GMT</h3><span class="ref">L37904966</span>
+          <div class="row"><span class="price">$3,800</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l37904966.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="longines"><div class="core">
+        <figure><img src="assets/products/75883377.jpg" alt="Longines Spirit Zulu Time 39 mm" loading="lazy"></figure>
+        <div class="meta"><small>Longines</small><h3>Spirit Zulu Time 39 mm</h3><span class="ref">L38024606</span>
+          <div class="row"><span class="price">$4,700</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l38024606.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="gshock" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/66694048.jpg" alt="G-SHOCK GAB2100-1A, Tough Solar with Bluetooth" loading="lazy"></figure>
+        <div class="meta"><small>G-SHOCK</small><h3>GA-B2100 Solar</h3><span class="ref">GAB2100-1A · Bluetooth</span>
+          <div class="row"><span class="price">$229</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/gab2100-1a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="gshock"><div class="core">
+        <figure><img src="assets/products/66693889.jpg" alt="G-SHOCK GA2100-4A" loading="lazy"></figure>
+        <div class="meta"><small>G-SHOCK</small><h3>GA-2100</h3><span class="ref">GA2100-4A</span>
+          <div class="row"><span class="price">$149</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/ga2100-4a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+    </div>
+    <div class="center reveal">
+      <a class="btn gold" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/brands/longines/"><span>All Longines</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+      <a class="btn ghost" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/timepieces/casio-g-shock/"><span>All G-SHOCK &amp; Casio</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+    </div>
+    <p class="note">Prices in CAD as listed on oceanfinejewellery.com. Free shipping on orders over $100.</p>
+  </div>
+</section>
+
+<section class="s services" id="services">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>More than a counter, <em>a craft.</em></h2>
+      <p>Watches, diamonds and custom pieces, chosen and fitted by people who know them.</p>
+    </header>
+    <div class="bento">
+      <article class="light-shell big reveal"><div class="core"><span class="roman">I</span><h3>Authorized watch retailer</h3><p>Buy with full manufacturer warranty from eight brands:</p>
+        <div class="brands"><span>Longines</span><span>Rado</span><span>Hamilton</span><span>Tissot</span><span>Mido</span><span>Seiko</span><span>Casio</span><span>G-SHOCK</span></div></div></article>
+      <article class="light-shell reveal" style="--dl:.1s"><div class="core"><span class="roman">II</span><h3>Custom jewellery</h3><p>Bring an idea, a sketch or a family stone, and we'll design it with you.</p></div></article>
+      <article class="light-shell reveal"><div class="core"><span class="roman">III</span><h3>Lab-grown diamonds</h3><p>High-quality lab-grown stones in rings, pendants, earrings and bracelets.</p></div></article>
+      <article class="light-shell big reveal" style="--dl:.1s"><div class="core"><span class="roman">IV</span><h3>Straps, sizing &amp; fitting</h3><p>A wide range of watch straps to personalize your favourite timepiece, with bracelet sizing and strap changes done while you wait.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="s visit" id="visit">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="eyebrow">Visit</span>
+      <h2>Come see them <em>in person.</em></h2>
+    </header>
+    <div class="locs">
+      <article class="light-shell loc reveal"><div class="core">
+        <small>The boutique</small><h3>Burlington</h3>
+        <p>3-4150 Fairview St, Burlington, ON</p>
+        <dl><dt>Phone</dt><dd><a href="tel:+19053333553">905-333-3553</a></dd><dt>Tue–Fri</dt><dd>11 am – 8 pm</dd><dt>Sat–Sun</dt><dd>11 am – 6 pm</dd><dt>Mon</dt><dd>Closed</dd></dl>
+        <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ocean+Fine+Jewellery+4150+Fairview+St+Burlington">Get directions <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+      </div></article>
+      <article class="light-shell loc reveal" style="--dl:.1s"><div class="core">
+        <small>Online</small><h3>Shop the store</h3>
+        <p>Browse the full catalogue at oceanfinejewellery.com, with free shipping on orders over $100.</p>
+        <a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/">Visit the online store <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<section class="s book" id="book">
+  <div class="wrap book-grid">
+    <header class="head reveal">
+      <span class="eyebrow">Appointments</span>
+      <h2>Book a <em>private</em> visit.</h2>
+      <p>Tell us what you'd like to see and we'll have it ready when you arrive.</p>
+      <ul class="contact-list"><li>3-4150 Fairview St, Burlington</li><li><a href="tel:+19053333553">905-333-3553</a></li></ul>
+    </header>
+    <form class="shell reveal" id="bookForm">
+      <div class="core">
+        <label>Name<input name="name" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+        <label>Preferred date<input name="date" type="date"></label>
+        <label class="full">Interested in<select name="interest"><option>Longines</option><option>G-SHOCK / Casio</option><option>Another watch brand</option><option>Custom jewellery</option><option>Lab-grown diamonds</option><option>Straps or sizing</option></select></label>
+        <label class="full">Notes<textarea name="notes" placeholder="A reference number, a wrist size, a budget…"></textarea></label>
+        <button class="btn gold" type="submit"><span>Request appointment</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top">Ocean<span>Fine Jewellery</span></a>
+    <span>3-4150 Fairview St, Burlington, ON · 905-333-3553</span>
+    <span>Sample concept site</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+/* reveals */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .12 });
+$$('.reveal').forEach(n => io.observe(n));
+
+/* brand filter */
+$$('.filters button').forEach(b => b.addEventListener('click', () => {
+  $$('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  $$('.product').forEach(p => p.hidden = b.dataset.f !== 'all' && p.dataset.brand !== b.dataset.f);
+}));
+
+/* sample booking form */
+$('#bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = e.target.elements.name.value.replace(/[<>&"]/g, '');
+  e.target.querySelector('.core').innerHTML = `<p class="thanks">Thank you, ${name}. We'll be in touch to confirm your visit.</p>`;
+});
+</script>
+<script type="module">
+// Ocean Fine Jewellery: scroll-driven 3D dive.
+// A procedural Longines HydroConquest falls into a GPU-simulated sea (heightfield wave equation
+// + analytic swell), sinks past light shafts and bubbles, and winds its hands as you scroll.
+import * as THREE from 'three';
+import { GPUComputationRenderer } from 'three/addons/misc/GPUComputationRenderer.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const $ = s => document.querySelector(s);
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const ss = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+const bump = (a, b, v) => Math.sin(Math.PI * clamp((v - a) / (b - a)));
+const lerp = (a, b, t) => a + (b - a) * t;
+const seg = (a, b, v) => clamp((v - a) / (b - a));
+
+const dive = $('.dive'), canvas = $('#gl');
+const panels = [...document.querySelectorAll('.panel')].map(el => ({ el, a: +el.dataset.in, b: +el.dataset.out }));
+const gauge = $('#gauge'), gaugeFill = gauge.querySelector('i'), gaugeLbl = gauge.querySelector('span');
+const cue = $('#cue'), hint = $('#hint');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mq = matchMedia('(max-width: 767px)');
+
+/* ---------------- layout presets (calibration knobs) ---------------- */
+const LAYOUT = {
+  desktop: { swing: 1.6, flutter: .16, scale: .74, wy0: 2.0, cy0: 1.0, ty0: 1.85, cz0: 8.6, czDeep: 7.2, look: .1 },
+  mobile:  { swing: .3,  flutter: .08, scale: .68, wy0: 2.15, cy0: 1.0, ty0: 3.25, cz0: 12.5, czDeep: 9.5, look: 1.25 }, // look: aim above the watch so it sits below the text
+};
+const L = () => mq.matches ? LAYOUT.mobile : LAYOUT.desktop;
+const SEABED = -10.5, SIM = 128, BOUNDS = 16;
+
+/* ---------------- scroll state (works even without WebGL) ---------------- */
+let cur = 0;
+function scrollProgress() {
+  const r = dive.getBoundingClientRect();
+  return { p: clamp(-r.top / (r.height - innerHeight)), visible: r.bottom > 0 };
+}
+function updatePanels(p) {
+  for (const { el, a, b } of panels) {
+    const o = ss(a - .04, a, p) * (1 - ss(b, b + .04, p));
+    const y = (p < a ? 1 : -1) * (1 - o) * 40;
+    el.style.opacity = o;
+    el.style.transform = mq.matches ? `translate3d(0,${y}px,0)` : `translate3d(0,calc(-50% + ${y}px),0)`;
+    el.style.visibility = o < .02 ? 'hidden' : 'visible';
+    el.classList.toggle('on', o > .5);
+  }
+  cue.style.opacity = 1 - seg(0, .04, p);
+  hint.style.opacity = .7 * (1 - seg(0, .04, p));
+}
+
+let renderer = null;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+} catch (e) { console.warn('WebGL unavailable, showing static hero', e); }
+
+if (!renderer) {
+  const loop = () => { const { p } = scrollProgress(); updatePanels(p); requestAnimationFrame(loop); };
+  loop();
+} else {
+  await Promise.all([
+    document.fonts.load('600 64px "Cormorant Garamond"'),
+    document.fonts.load('600 32px "Plus Jakarta Sans"'),
+  ]).catch(() => {});
+  start();
+}
+
+function start() {
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.05;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, .05, 400);
+
+  /* ---------------- sky + environment ---------------- */
+  const SUN_DIR = new THREE.Vector3(-.38, .11, -1).normalize();
+  const C = hex => new THREE.Color(hex);
+  const skyMat = new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: { uTop: { value: C('#5F90B0') }, uHorizon: { value: C('#F2DBB8') }, uBottom: { value: C('#14404E') },
+      uSun: { value: C('#FFD49A') }, uSunDir: { value: SUN_DIR } },
+    vertexShader: /* glsl */`varying vec3 vDir;
+      void main(){ vDir = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: /* glsl */`uniform vec3 uTop, uHorizon, uBottom, uSun, uSunDir; varying vec3 vDir;
+      void main(){
+        vec3 d = normalize(vDir); float h = d.y;
+        vec3 c = mix(uHorizon, uTop, pow(clamp(h, 0.0, 1.0), .38));
+        c += uHorizon * .25 * exp(-abs(h) * 28.0);
+        c = mix(c, uBottom, smoothstep(0.0, -.06, h));
+        float s = max(dot(d, uSunDir), 0.0);
+        c += uSun * (pow(s, 900.0) * 6.0 + pow(s, 24.0) * .5 + pow(s, 4.0) * .2);
+        gl_FragColor = vec4(c, 1.0);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+      }`,
+  });
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(300, 48, 24), skyMat);
+  scene.add(sky);
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const softbox = (s, w, h, pos, k) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(k, k, k), side: THREE.DoubleSide }));
+    m.position.copy(pos); m.lookAt(0, 0, 0); s.add(m);
+  };
+  const envAbove = (() => {
+    const s = new THREE.Scene(), studioSky = skyMat.clone();
+    studioSky.uniforms.uBottom.value = C('#435C66');
+    s.add(new THREE.Mesh(new THREE.SphereGeometry(40, 48, 24), studioSky));
+    softbox(s, 16, 6, new THREE.Vector3(0, 12, 12), 4.2);
+    softbox(s, 3, 18, new THREE.Vector3(-15, 2, 5), 2.2);
+    softbox(s, 3, 18, new THREE.Vector3(15, 3, -3), 1.4);
+    return pmrem.fromScene(s, .015).texture;
+  })();
+  const envBelow = (() => {
+    const s = new THREE.Scene();
+    s.add(new THREE.Mesh(new THREE.SphereGeometry(40, 32, 16), new THREE.ShaderMaterial({
+      side: THREE.BackSide,
+      vertexShader: `varying vec3 vD; void main(){ vD = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+      fragmentShader: `varying vec3 vD; void main(){ float h = normalize(vD).y;
+        vec3 c = mix(vec3(.004, .03, .045), vec3(.03, .2, .26), smoothstep(-.6, .3, h));
+        c = mix(c, vec3(.9, 1.6, 1.7), smoothstep(.55, 1.0, h));
+        gl_FragColor = vec4(c, 1.0); }`,
+    })));
+    softbox(s, 10, 10, new THREE.Vector3(0, 14, 6), 3.2);
+    softbox(s, 8, 3, new THREE.Vector3(-4, 3, 14), 2.6); // a diver's torch from the camera side keeps the steel reading as steel
+    return pmrem.fromScene(s, .02).texture;
+  })();
+  const envSky = (() => {
+    // Art-directed: the sea reflects a bluer sky than the one on screen, so it reads as ocean, not mirror.
+    const s = new THREE.Scene(), seaSky = skyMat.clone();
+    seaSky.uniforms.uHorizon.value = C('#7FA3B6'); seaSky.uniforms.uTop.value = C('#3F6F92');
+    s.add(new THREE.Mesh(new THREE.SphereGeometry(40, 48, 24), seaSky));
+    return pmrem.fromScene(s, .01).texture;
+  })();
+  scene.environment = envAbove;
+
+  const sun = new THREE.DirectionalLight('#FFE3BE', 2.6);
+  sun.position.copy(SUN_DIR).multiplyScalar(60);
+  const key = new THREE.DirectionalLight('#FFFFFF', 1.1);
+  key.position.set(-3, 6, 9);
+  const hemi = new THREE.HemisphereLight('#E4EDF1', '#0E3A48', .45);
+  scene.add(sun, key, hemi);
+
+  const FOG_ABOVE = C('#E9D3B2'), FOG_SHALLOW = C('#0E5466'), FOG_DEEP = C('#03141D');
+  scene.fog = new THREE.FogExp2(FOG_ABOVE.clone(), .0075);
+
+  /* ---------------- water: GPU heightfield sim ---------------- */
+  const gpu = new GPUComputationRenderer(SIM, SIM, renderer);
+  gpu.setDataType(THREE.HalfFloatType);
+  const hVar = gpu.addVariable('heightmap', /* glsl */`
+    #include <common>
+    uniform vec2 uImp; uniform float uImpSize; uniform float uImpStr; uniform float uVisc;
+    void main() {
+      vec2 cell = 1.0 / resolution.xy;
+      vec2 uv = gl_FragCoord.xy * cell;
+      vec4 hv = texture2D(heightmap, uv);
+      float n = texture2D(heightmap, uv + vec2(0.0, cell.y)).x;
+      float s = texture2D(heightmap, uv - vec2(0.0, cell.y)).x;
+      float e = texture2D(heightmap, uv + vec2(cell.x, 0.0)).x;
+      float w = texture2D(heightmap, uv - vec2(cell.x, 0.0)).x;
+      float nh = ((n + s + e + w) * .5 - hv.y) * uVisc;
+      float ph = clamp(length((uv - .5) * BOUNDS - uImp) * PI / uImpSize, 0.0, PI);
+      nh -= (cos(ph) + 1.0) * uImpStr;
+      hv.y = hv.x; hv.x = nh;
+      gl_FragColor = hv;
+    }`, gpu.createTexture());
+  gpu.setVariableDependencies(hVar, [hVar]);
+  const simU = hVar.material.uniforms;
+  Object.assign(simU, { uImp: { value: new THREE.Vector2(1e4, 1e4) }, uImpSize: { value: .5 }, uImpStr: { value: 0 }, uVisc: { value: .988 } });
+  hVar.material.defines.BOUNDS = BOUNDS.toFixed(1);
+  const simErr = gpu.init();
+  if (simErr) console.warn('Water sim disabled:', simErr);
+
+  const WAVES = /* glsl */`
+    uniform sampler2D uHeight; uniform float uTime; uniform float uHScale;
+    float simAt(vec2 p) {
+      vec2 uv = vec2(p.x, -p.y) / ${BOUNDS.toFixed(1)} + .5;
+      vec2 e = min(uv, 1.0 - uv);
+      return texture2D(uHeight, clamp(uv, 0.0, 1.0)).x * uHScale * smoothstep(0.0, .1, min(e.x, e.y));
+    }
+    float waves(vec2 p, out vec2 g) {
+      float h = 0.0; vec2 d; float ph; g = vec2(0.0);
+      #define WV(dx, dy, F, A, S) d = normalize(vec2(dx, dy)); ph = dot(d, p) * F + uTime * S; h += A * sin(ph); g += A * F * cos(ph) * d;
+      WV( 1.0,  .35,  .45, .070,  .8)
+      WV( -.5,  1.0,  .80, .040, 1.1)
+      WV(  .8,  -.7, 1.50, .020, 1.7)
+      WV(-1.0,  -.3, 2.60, .009, 2.4)
+      return h;
+    }`;
+  const DETAIL = /* glsl */`
+    vec2 detail(vec2 p) {
+      vec2 g = vec2(0.0); vec2 d; float ph;
+      #define DV(dx, dy, F, A, S) d = normalize(vec2(dx, dy)); ph = dot(d, p) * F + uTime * S; g += A * F * cos(ph) * d;
+      DV( .3, 1.0,  5.0, .006, 3.1) DV(1.0, -.6,  7.3, .004, 3.7)
+      DV(-.8, -.5, 11.0, .0025, 4.6) DV(-.2, 1.0, 17.0, .0015, 5.5)
+      return g;
+    }
+    vec2 simGrad(vec2 p) {
+      float c = ${(BOUNDS / SIM).toFixed(4)};
+      return vec2(simAt(p + vec2(c, 0.0)) - simAt(p - vec2(c, 0.0)), simAt(p + vec2(0.0, c)) - simAt(p - vec2(0.0, c))) / (2.0 * c);
+    }`;
+  const waterU = {
+    uHeight: { value: null }, uTime: { value: 0 }, uHScale: { value: .03 },
+    uUnderTop: { value: C('#A6E6EC') }, uUnderDeep: { value: C('#0B4656') },
+  };
+  const waterMat = new THREE.MeshPhysicalMaterial({
+    color: '#08506A', roughness: .06, metalness: 0, transparent: true, opacity: .92, side: THREE.DoubleSide,
+    envMap: envSky, envMapIntensity: .8,
+    forceSinglePass: true, // the default two-pass transparent render flips winding, breaking gl_FrontFacing below the surface
+  });
+  waterMat.onBeforeCompile = sh => {
+    Object.assign(sh.uniforms, waterU);
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\n' + WAVES + '\nvarying vec2 vWXZ;')
+      .replace('#include <begin_vertex>', /* glsl */`
+        vec3 transformed = vec3(position);
+        vec4 wp0 = modelMatrix * vec4(position, 1.0);
+        vWXZ = wp0.xz;
+        vec2 gw; transformed.z += waves(wp0.xz, gw) + simAt(wp0.xz);`);
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', '#include <common>\n' + WAVES + DETAIL + '\nvarying vec2 vWXZ; uniform vec3 uUnderTop; uniform vec3 uUnderDeep;')
+      .replace('#include <normal_fragment_maps>', /* glsl */`
+        vec2 gw; waves(vWXZ, gw);
+        vec2 gg = gw + detail(vWXZ) * exp(-length(vViewPosition) * .05) + simGrad(vWXZ);
+        vec3 nW = normalize(vec3(-gg.x, 1.0, -gg.y));
+        normal = normalize((viewMatrix * vec4(nW, 0.0)).xyz) * faceDirection;`)
+      .replace('#include <opaque_fragment>', /* glsl */`
+        if (!gl_FrontFacing) {
+          float k = pow(abs(dot(normal, normalize(vViewPosition))), 2.5);
+          outgoingLight = mix(uUnderDeep, uUnderTop, k) + pow(k, 24.0) * .6;
+          diffuseColor.a = .97 * smoothstep(.05, .45, k); // fade into the fog toward the horizon
+        }
+        #include <opaque_fragment>`);
+  };
+  // Dense near the watch, sparse toward the horizon: remap a uniform grid with a power curve.
+  const segs = mq.matches ? 220 : 320;
+  const waterGeo = new THREE.PlaneGeometry(2, 2, segs, segs);
+  const wp = waterGeo.attributes.position;
+  for (let i = 0; i < wp.count; i++) {
+    const f = u => Math.sign(u) * Math.pow(Math.abs(u), 2.2) * 120;
+    wp.setXY(i, f(wp.getX(i)), f(wp.getY(i)));
+  }
+  const water = new THREE.Mesh(waterGeo, waterMat);
+  water.rotation.x = -Math.PI / 2;
+  water.frustumCulled = false;
+  water.renderOrder = 2;
+  scene.add(water);
+
+  /* ---------------- seabed with caustics ---------------- */
+  const bedU = THREE.UniformsUtils.merge([THREE.UniformsLib.fog, { uTime: { value: 0 }, uVis: { value: 0 }, uSand: { value: C('#5E8C8C') } }]);
+  const seabed = new THREE.Mesh(new THREE.PlaneGeometry(220, 220, 1, 1), new THREE.ShaderMaterial({
+    fog: true, uniforms: bedU,
+    vertexShader: /* glsl */`#include <common>
+      #include <fog_pars_vertex>
+      varying vec2 vP;
+      void main(){ vec4 wp = modelMatrix * vec4(position, 1.0); vP = wp.xz;
+        vec4 mvPosition = viewMatrix * wp; gl_Position = projectionMatrix * mvPosition;
+        #include <fog_vertex>
+      }`,
+    fragmentShader: /* glsl */`#include <common>
+      #include <fog_pars_fragment>
+      uniform float uTime, uVis; uniform vec3 uSand; varying vec2 vP;
+      float caus(vec2 p) {
+        float t = uTime * .5, c = 0.0; vec2 q = p;
+        for (int i = 0; i < 3; i++) {
+          q += vec2(sin(q.y * 1.7 + t), cos(q.x * 1.5 - t * .8)) * .35;
+          c += pow(.5 + .5 * sin(q.x * 2.1) * sin(q.y * 2.3), 5.0);
+        }
+        return c / 3.0;
+      }
+      void main(){
+        float ripple = .9 + .1 * sin(vP.x * .7 + sin(vP.y * .5) * 2.0);
+        vec3 c = uSand * ripple * (.45 + 1.4 * caus(vP * .8));
+        gl_FragColor = vec4(c, 1.0);
+        #include <tonemapping_fragment>
+        #include <colorspace_fragment>
+        #include <fog_fragment>
+        gl_FragColor.rgb = mix(fogColor, gl_FragColor.rgb, uVis); // emerges from the haze near the bottom
+      }`,
+  }));
+  seabed.rotation.x = -Math.PI / 2;
+  seabed.position.y = SEABED;
+  scene.add(seabed);
+
+  // seeded randomness so the scenery is the same on every visit
+  let seed = 7;
+  const rnd = (a = 0, b = 1) => { seed = (seed * 16807) % 2147483647; return a + (b - a) * (seed - 1) / 2147483646; };
+  const timeU = { value: 0 };
+
+  /* ---------------- boats on the horizon ---------------- */
+  const boats = new THREE.Group(); scene.add(boats);
+  const white = new THREE.MeshStandardMaterial({ color: '#F3F0E9', roughness: .45 });
+  const navy = new THREE.MeshStandardMaterial({ color: '#22313B', roughness: .5 });
+  const sailMat = new THREE.MeshStandardMaterial({ color: '#FBF7EF', roughness: .85, side: THREE.DoubleSide });
+  function hullGeo(L, beam, h) { // side profile extruded, then the bow and keel pinched narrow
+    const sh = new THREE.Shape();
+    sh.moveTo(-L / 2, -h * .1); sh.lineTo(-L / 2, h); sh.lineTo(L / 2, h * 1.15);
+    sh.quadraticCurveTo(L * .4, -h * .2, L * .18, -h * .4); sh.lineTo(-L * .42, -h * .4);
+    const g = new THREE.ExtrudeGeometry(sh, { depth: beam, bevelEnabled: false, curveSegments: 10 }).translate(0, 0, -beam / 2);
+    const a = g.attributes.position;
+    for (let i = 0; i < a.count; i++) {
+      const x = a.getX(i) / (L / 2), y = a.getY(i);
+      a.setZ(i, a.getZ(i) * (1 - Math.max(0, x) ** 2 * .92) * (.55 + .45 * ss(-h * .4, h, y)));
+    }
+    g.computeVertexNormals();
+    return g;
+  }
+  const tri = (pts) => { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3)); g.computeVertexNormals(); return g; };
+  function sailboat(scale) {
+    const b = new THREE.Group();
+    b.add(new THREE.Mesh(hullGeo(5, 1.5, .5), white));
+    const stripe = new THREE.Mesh(hullGeo(5.02, 1.52, .12), navy); stripe.position.y = .35; b.add(stripe);
+    const cabin = new THREE.Mesh(new RoundedBoxGeometry(1.6, .4, .9, 2, .12), white); cabin.position.set(-.5, .7, 0); b.add(cabin);
+    const mast = new THREE.Mesh(new THREE.CylinderGeometry(.04, .05, 6.2, 8), white); mast.position.set(.4, 3.6, 0); b.add(mast);
+    b.add(new THREE.Mesh(tri([.38, 6.4, 0, .38, .9, 0, -2.3, .9, 0]), sailMat));      // mainsail
+    b.add(new THREE.Mesh(tri([.42, 6.0, 0, 2.45, .65, 0, .42, .8, 0]), sailMat));      // jib
+    b.scale.setScalar(scale);
+    return b;
+  }
+  function yacht(scale) {
+    const b = new THREE.Group();
+    b.add(new THREE.Mesh(hullGeo(8, 2.2, .8), white));
+    const d1 = new THREE.Mesh(new RoundedBoxGeometry(4.2, .55, 1.7, 2, .15), white); d1.position.set(-.6, 1.15, 0); b.add(d1);
+    const w1 = new THREE.Mesh(new THREE.BoxGeometry(3.9, .2, 1.74), navy); w1.position.set(-.5, 1.18, 0); b.add(w1);
+    const d2 = new THREE.Mesh(new RoundedBoxGeometry(2.4, .45, 1.4, 2, .15), white); d2.position.set(-.9, 1.62, 0); b.add(d2);
+    const w2 = new THREE.Mesh(new THREE.BoxGeometry(2.2, .16, 1.44), navy); w2.position.set(-.8, 1.64, 0); b.add(w2);
+    const m = new THREE.Mesh(new THREE.CylinderGeometry(.03, .04, 1.2, 6), white); m.position.set(-.9, 2.4, 0); b.add(m);
+    b.scale.setScalar(scale);
+    return b;
+  }
+  const fleet = [
+    { b: sailboat(.8), x: -10, z: -95, yaw: .5 },
+    { b: sailboat(.6), x: 5, z: -110, yaw: -2.2 },
+    { b: yacht(.85), x: 44, z: -110, yaw: 2.8 },
+  ];
+  for (const f of fleet) { f.b.position.set(f.x, 0, f.z); f.b.rotation.y = f.yaw; f.ph = rnd(0, 6); boats.add(f.b); }
+
+  /* ---------------- sea life on the ocean floor ---------------- */
+  const life = new THREE.Group(); scene.add(life);
+  // Sea-life materials are solid; like the seabed they emerge from the murk (mixed toward the water colour by uVis),
+  // which is driven by how close the camera is to the floor. vtx: optional vertex animation (sway, tail wag).
+  const lm = (o, vtx = '') => {
+    const m = new THREE.MeshStandardMaterial(o);
+    m.onBeforeCompile = sh => {
+      sh.uniforms.uTime = timeU; sh.uniforms.uVis = bedU.uVis;
+      sh.vertexShader = sh.vertexShader.replace('#include <common>', '#include <common>\nuniform float uTime;')
+        .replace('#include <begin_vertex>', '#include <begin_vertex>\n' + vtx);
+      sh.fragmentShader = sh.fragmentShader.replace('#include <common>', '#include <common>\nuniform float uVis;')
+        .replace('#include <fog_fragment>', '#include <fog_fragment>\n  gl_FragColor.rgb = mix(fogColor, gl_FragColor.rgb, uVis);');
+    };
+    m.customProgramCacheKey = () => 'life' + vtx; // each vertex patch needs its own program
+    return m;
+  };
+  const floor = SEABED;
+  const spot = (xMin, zMin, zMax) => { // keep the near-left clear: that's where the final caption and buttons sit
+    const z = rnd(zMin, zMax); return [z > -7 ? rnd(.5, 12) : rnd(xMin, 13), z];
+  };
+  const jitter = (g, amt) => { // lumpy, organic surfaces
+    const a = g.attributes.position;
+    for (let i = 0; i < a.count; i++) {
+      const x = a.getX(i), y = a.getY(i), z = a.getZ(i);
+      const n = Math.sin(x * 7.1 + y * 3.3) * Math.sin(y * 6.7 + z * 2.9) * Math.sin(z * 5.3 + x * 4.1);
+      a.setXYZ(i, x * (1 + n * amt), y * (1 + n * amt), z * (1 + n * amt));
+    }
+    g.computeVertexNormals();
+    return g;
+  };
+  // rocks
+  const rockMat = lm({ color: '#4E6366', roughness: .95, flatShading: true });
+  for (let i = 0; i < 18; i++) {
+    const r = new THREE.Mesh(jitter(new THREE.IcosahedronGeometry(1, 1), .25), rockMat);
+    const s = rnd(.3, 1), [x, z] = spot(-14, -24, -3); r.scale.set(s * rnd(1, 1.6), s * rnd(.45, .8), s * rnd(.9, 1.4));
+    r.position.set(x, floor + s * .2, z); r.rotation.y = rnd(0, 6); life.add(r);
+  }
+  // branching coral
+  const coralCols = ['#E07A5F', '#F2B880', '#C9707F', '#E9A6A6'];
+  for (let c = 0; c < 12; c++) {
+    const g = new THREE.Group(), m = lm({ color: coralCols[c % 4], roughness: .8 });
+    for (let k = 0; k < 9; k++) {
+      const len = rnd(.35, .9), br = new THREE.Mesh(new THREE.CylinderGeometry(.025, .06, len, 6).translate(0, len / 2, 0), m);
+      br.rotation.set(rnd(-.7, .7), rnd(0, 6), rnd(-.7, .7)); g.add(br);
+      const tip = new THREE.Mesh(new THREE.SphereGeometry(.045, 8, 6), m); tip.position.set(0, len, 0); br.add(tip);
+    }
+    const [x, z] = spot(-12, -20, -3); g.position.set(x, floor, z); g.scale.setScalar(rnd(.8, 1.4)); life.add(g);
+  }
+  // brain coral
+  for (let c = 0; c < 7; c++) {
+    const b = new THREE.Mesh(jitter(new THREE.SphereGeometry(.5, 24, 16), .06), lm({ color: '#D9A06B', roughness: .9 }));
+    const [x, z] = spot(-12, -18, -3); b.scale.set(1, .6, 1); b.position.set(x, floor + .12, z); b.scale.multiplyScalar(rnd(.5, .9)); life.add(b);
+  }
+  // starfish near where the watch lands
+  const star = new THREE.Shape();
+  for (let i = 0; i <= 10; i++) { const a = i / 10 * Math.PI * 2 + Math.PI / 2, r = i % 2 ? .1 : .3; i ? star.lineTo(Math.cos(a) * r, Math.sin(a) * r) : star.moveTo(Math.cos(a) * r, Math.sin(a) * r); }
+  const starGeo = new THREE.ExtrudeGeometry(star, { depth: .03, bevelEnabled: true, bevelThickness: .03, bevelSize: .03, bevelSegments: 2 }).rotateX(-Math.PI / 2);
+  for (const [x, z, col] of [[2.4, -2.2, '#E8875A'], [4.6, -3.6, '#D9604C'], [-4.5, -9, '#F0A35E'], [8.5, -6, '#E8875A'], [-9, -14, '#D9604C'], [11, -12, '#F0A35E']]) {
+    const st = new THREE.Mesh(starGeo, lm({ color: col, roughness: .7 })); st.position.set(x, floor + .02, z); st.rotation.y = rnd(0, 6); life.add(st);
+  }
+  // swaying kelp (instanced; the sway is in the vertex shader)
+  const kelpGeo = new THREE.PlaneGeometry(.32, 1, 1, 12).translate(0, .5, 0);
+  { const a = kelpGeo.attributes.position; for (let i = 0; i < a.count; i++) a.setX(i, a.getX(i) * (1.1 - a.getY(i) * .7)); }
+  const kelpMat = lm({ color: '#4F7B45', roughness: .8, side: THREE.DoubleSide }, `
+        float sd = instanceMatrix[3].x * 1.7 + instanceMatrix[3].z * 2.3, k = position.y * position.y;
+        transformed.x += sin(uTime * 1.1 + sd + position.y * 2.0) * .22 * k;
+        transformed.z += cos(uTime * .8 + sd) * .12 * k;`);
+  const KELP = 84, kelp = new THREE.InstancedMesh(kelpGeo, kelpMat, KELP);
+  const km = new THREE.Matrix4(), kq = new THREE.Quaternion(), ke = new THREE.Euler(), kv = new THREE.Vector3(), ks = new THREE.Vector3();
+  for (let i = 0; i < KELP; i++) {
+    const g = i % 7, cx = [-12, -7, -2.5, 3, 7.5, 12, -4][g], cz = [-18, -13, -10, -14, -9, -16, -22][g];
+    km.compose(kv.set(cx + rnd(-1.6, 1.6), floor, cz + rnd(-1.5, 1.5)), kq.setFromEuler(ke.set(0, rnd(0, 6), 0)), ks.set(rnd(.8, 1.3), rnd(2.5, 5.5), 1));
+    kelp.setMatrixAt(i, km);
+  }
+  life.add(kelp);
+  // a school of fish circling the landing spot (instanced bodies + wagging tails)
+  const FISH = 44;
+  const bodyGeo = new THREE.SphereGeometry(1, 14, 10).scale(.28, .11, .07);
+  const tail = new THREE.Shape(); tail.moveTo(0, 0); tail.lineTo(-.18, .11); tail.lineTo(-.13, 0); tail.lineTo(-.18, -.11); tail.lineTo(0, 0);
+  const tailGeo = new THREE.ShapeGeometry(tail).translate(-.24, 0, 0);
+  const fishMat = lm({ color: '#FFFFFF', metalness: .55, roughness: .32 });
+  const tailMat = lm({ color: '#FFFFFF', metalness: .4, roughness: .45, side: THREE.DoubleSide }, `
+        transformed.z += sin(uTime * 11.0 + float(gl_InstanceID) * 1.7) * (-(position.x + .24)) * .6;`);
+  const bodies = new THREE.InstancedMesh(bodyGeo, fishMat, FISH), tails = new THREE.InstancedMesh(tailGeo, tailMat, FISH);
+  const fishCols = ['#9FB8C4', '#B9CCD4', '#F2C14E', '#8AA6B5'];
+  const fish = Array.from({ length: FISH }, (_, i) => {
+    const col = new THREE.Color(fishCols[i % 7 === 0 ? 2 : i % 4 === 2 ? 0 : i % 4]);
+    bodies.setColorAt(i, col); tails.setColorAt(i, col);
+    const far = i >= 26; // a second, more distant school off to the left
+    return { r: 1 + rnd(-.15, .2), y: floor + (far ? 2.4 : 1.3) + rnd(-.4, .7), off: rnd(-.5, .5), sp: (far ? -1 : 1) * rnd(.26, .34), wob: rnd(0, 6),
+      cx: far ? -6.5 : 3.4, cz: far ? -15 : -4.5, rx: far ? 4 : 2.8, rz: far ? 2.4 : 1.8 };
+  });
+  for (const o of [bodies, tails]) { o.frustumCulled = false; o.instanceMatrix.setUsage(THREE.DynamicDrawUsage); life.add(o); }
+  const fm4 = new THREE.Matrix4(), fq = new THREE.Quaternion(), fe = new THREE.Euler(), fv = new THREE.Vector3(), fs = new THREE.Vector3(1, 1, 1);
+  function swim(t) {
+    fish.forEach((f, i) => {
+      const th = t * f.sp + f.off, r = f.r + Math.sin(t * .7 + f.wob) * .2;
+      const x = f.cx + Math.cos(th) * r * f.rx, z = f.cz + Math.sin(th) * r * f.rz, y = f.y + Math.sin(t * 1.3 + f.wob) * .12;
+      const vx = -Math.sin(th) * r * f.rx * Math.sign(f.sp), vz = Math.cos(th) * r * f.rz * Math.sign(f.sp);
+      fm4.compose(fv.set(x, y, z), fq.setFromEuler(fe.set(0, Math.atan2(-vz, vx), Math.sin(t * 2 + f.wob) * .08)), fs);
+      bodies.setMatrixAt(i, fm4); tails.setMatrixAt(i, fm4);
+    });
+    bodies.instanceMatrix.needsUpdate = tails.instanceMatrix.needsUpdate = true;
+  }
+
+  /* ---------------- light shafts ---------------- */
+  const rays = [];
+  const rayGeo = new THREE.PlaneGeometry(1, 1).translate(0, -.5, 0);
+  for (let i = 0; i < 9; i++) {
+    const m = new THREE.Mesh(rayGeo, new THREE.ShaderMaterial({
+      transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, fog: false, side: THREE.DoubleSide,
+      uniforms: { uO: { value: 0 }, uT: { value: 0 }, uSeed: { value: Math.random() } },
+      vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+      fragmentShader: `varying vec2 vUv; uniform float uO, uT, uSeed;
+        void main(){ float x = abs(vUv.x - .5) * 2.0;
+          float a = (1.0 - smoothstep(0.0, 1.0, x)) * vUv.y * vUv.y * (.55 + .45 * sin(uT * .6 + uSeed * 6.28));
+          gl_FragColor = vec4(vec3(.7, .95, 1.0), a * uO); }`,
+    }));
+    m.scale.set(.6 + Math.random() * 1.6, 24, 1);
+    m.position.set(-7 + Math.random() * 16, -.05, -7 + Math.random() * 7);
+    m.rotation.order = 'YXZ';
+    m.rotation.z = -.18 + Math.random() * .1;
+    rays.push(m); scene.add(m);
+  }
+
+  /* ---------------- particles: bubbles, splash, marine snow ---------------- */
+  function particles(n, color, soft) {
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(n * 3), alpha = new Float32Array(n), size = new Float32Array(n);
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3).setUsage(THREE.DynamicDrawUsage));
+    geo.setAttribute('aA', new THREE.BufferAttribute(alpha, 1).setUsage(THREE.DynamicDrawUsage));
+    geo.setAttribute('aS', new THREE.BufferAttribute(size, 1));
+    const mat = new THREE.ShaderMaterial({
+      transparent: true, depthWrite: false, defines: soft ? { SOFT: '' } : {},
+      uniforms: { uColor: { value: C(color) }, uScale: { value: 500 } },
+      vertexShader: /* glsl */`attribute float aA; attribute float aS; uniform float uScale; varying float vA;
+        void main(){ vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          gl_PointSize = aS * uScale / max(-mv.z, .1); gl_Position = projectionMatrix * mv; vA = aA; }`,
+      fragmentShader: /* glsl */`uniform vec3 uColor; varying float vA;
+        void main(){ vec2 c = gl_PointCoord - .5; float r = length(c); if (r > .5) discard;
+          #ifdef SOFT
+            float a = smoothstep(.5, 0.0, r);
+          #else
+            float a = smoothstep(.5, .42, r) * (.2 + .8 * smoothstep(.2, .46, r)) + smoothstep(.16, 0.0, length(c - vec2(-.14, .14))) * .9;
+          #endif
+          gl_FragColor = vec4(uColor, a * vA);
+          #include <colorspace_fragment>
+        }`,
+    });
+    const pts = new THREE.Points(geo, mat);
+    pts.frustumCulled = false;
+    scene.add(pts);
+    return { pts, geo, pos, alpha, size, mat, n, life: new Float32Array(n), vel: new Float32Array(n * 3), next: 0 };
+  }
+  const bubbles = particles(260, '#DDF6FA', false);
+  const splash = particles(320, '#F4FBFC', true);
+  const snow = particles(mq.matches ? 260 : 520, '#BFE3E6', true);
+  for (let i = 0; i < snow.n; i++) {
+    snow.pos.set([(Math.random() - .5) * 16, -Math.random() * 12, (Math.random() - .5) * 12], i * 3);
+    snow.size[i] = .012 + Math.random() * .03;
+  }
+  snow.geo.attributes.aS.needsUpdate = true;
+  const emit = (sys, x, y, z, vx, vy, vz, size) => {
+    const i = sys.next; sys.next = (sys.next + 1) % sys.n;
+    sys.pos.set([x, y, z], i * 3); sys.vel.set([vx, vy, vz], i * 3);
+    sys.size[i] = size; sys.life[i] = 1;
+    sys.geo.attributes.aS.needsUpdate = true;
+  };
+
+  /* ---------------- the watch ---------------- */
+  const W = buildWatch(renderer);
+  scene.add(W.root);
+
+  /* ---------------- interaction ---------------- */
+  const pointer = new THREE.Vector2(), pointerSmooth = new THREE.Vector2();
+  const ray = new THREE.Raycaster(), surfacePlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+  const hit = new THREE.Vector3();
+  let mouseImp = null;
+  addEventListener('pointermove', e => {
+    pointer.set(e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight) * 2 + 1);
+    if (camera.position.y > .05 && e.pointerType === 'mouse') {
+      ray.setFromCamera(pointer, camera);
+      if (ray.ray.intersectPlane(surfacePlane, hit) && Math.abs(hit.x) < BOUNDS / 2 && Math.abs(hit.z) < BOUNDS / 2)
+        mouseImp = { x: hit.x, z: hit.z };
+    }
+  }, { passive: true });
+
+  function resize() {
+    const w = innerWidth, h = innerHeight;
+    renderer.setPixelRatio(Math.min(devicePixelRatio, mq.matches ? 1.5 : 1.75));
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    const s = renderer.domElement.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
+    for (const sys of [bubbles, splash, snow]) sys.mat.uniforms.uScale.value = s;
+    W.root.scale.setScalar(L().scale);
+  }
+  resize();
+  addEventListener('resize', resize);
+
+  /* ---------------- choreography ---------------- */
+  // Steady part of the watch's height: free fall in air, drag brakes the plunge, a near-constant sink, a soft landing.
+  const sinkY = p => {
+    const l = L();
+    if (p < .15) return lerp(l.wy0, -.4, Math.pow(seg(.05, .15, p), 2));
+    const u = clamp((p - .15) / .82), w = (u - .85) / .15;
+    const land = u < .85 ? u : .85 + .15 * (w - w * w / 2);
+    return -.4 - 2.2 * (1 - Math.exp(-25 * (p - .15))) - 6.05 * land; // ends at SEABED + 2.3
+  };
+  // Like a plate dropped in a pool, the watch flutters: it glides side to side, banking into each glide,
+  // rising slightly as it glides and dropping as it turns. Phase advances with scroll, so it's fully scrubbable.
+  const FL = 15;
+  const flutterMask = p => ss(.22, .32, p) * (1 - ss(.88, .97, p));
+  const lateral = p => {
+    const l = L();
+    const path = l.swing * (1 - 2 * ss(.26, .44, p) + 2 * ss(.66, .84, p)); // right -> left -> right, slow glides
+    return path + l.flutter * Math.sin(p * FL) * flutterMask(p);
+  };
+
+  const clock = new THREE.Clock();
+  let prevWy = null, simAcc = 0, first = true, watchImp = 0;
+  const target = new THREE.Vector3(), fogCol = new THREE.Color();
+  const lastPos = new THREE.Vector3(), lastVel = new THREE.Vector3(), vel = new THREE.Vector3(), feel = new THREE.Vector3(), invQ = new THREE.Quaternion();
+  const rawAcc = new THREE.Vector3(), accSmooth = new THREE.Vector3();
+  let physicsPrimed = false, pw = 0, pwv = 0;
+  const smoothDamp = (x, to, v, time, dt) => { // Unity-style SmoothDamp: no overshoot, frame-rate independent
+    const w = 2 / time, k = w * dt, e = 1 / (1 + k + .48 * k * k + .235 * k * k * k);
+    const c = x - to, tmp = (v + w * c) * dt;
+    return [to + (c + tmp) * e, (v - w * tmp) * e];
+  };
+
+  renderer.setAnimationLoop(() => {
+    const dt = Math.min(clock.getDelta(), .1), t = clock.elapsedTime;
+    const { p: goal, visible } = scrollProgress();
+    cur = reduce ? goal : cur + (goal - cur) * (1 - Math.exp(-dt / .14));
+    if (Math.abs(goal - cur) < 1e-4) cur = goal;
+    updatePanels(cur);
+    // The watch and camera follow scroll through a critically damped spring, so wheel notches become one glide.
+    [pw, pwv] = smoothDamp(pw, cur, pwv, .5, dt);
+    const p = reduce ? cur : pw;
+    if (!visible) return;
+
+    const l = L();
+    pointerSmooth.lerp(pointer, 1 - Math.exp(-dt / .25));
+
+    // --- watch transform
+    const above = 1 - seg(.04, .08, p);
+    const fm = flutterMask(p), ph = p * FL;
+    const baseY = sinkY(p);
+    const wy = baseY + .08 * Math.cos(ph) * fm + Math.sin(t * 1.1) * .06 * above + Math.sin(t * .7) * .04 * (1 - above);
+    const wx = lateral(p);
+    const vx = (lateral(p + 1e-3) - lateral(p - 1e-3)) / 2e-3;          // sideways speed drives the bank
+    const bank = clamp(vx / 40, -1, 1) * .35;
+    const ryAbove = -.55 + .9 * bump(.05, .32, p);                        // spins as it hits the water
+    const ryUnder = -.35 * clamp(wx / 1.6, -1, 1) + .16 * Math.sin(ph * .6 + .6) * fm; // face turns toward the caption side
+    W.root.position.set(wx, wy, 0);
+    W.root.rotation.set(
+      -.12 - .3 * bump(.08, .42, p) + .1 * Math.sin(ph + 1.3) * fm + Math.sin(t * .8) * .03 - pointerSmooth.y * .12,
+      lerp(ryAbove, ryUnder, ss(.2, .32, p)) + Math.sin(t * .6) * .05 + pointerSmooth.x * .25,
+      .35 * bump(.05, .4, p) - bank + Math.sin(t * .5) * .02,
+    );
+
+    // --- bracelet physics: what the links feel in the watch's own frame = gravity - the watch's acceleration
+    const underNow = wy < 0;
+    vel.subVectors(W.root.position, lastPos).divideScalar(Math.max(dt, 1e-3));
+    if (!physicsPrimed || vel.length() > 60) { lastVel.copy(vel); physicsPrimed = true; } // first frame or a jump-link teleport
+    // frame-to-frame acceleration is noisy at high refresh rates: low-pass it before the bracelet feels it
+    rawAcc.subVectors(vel, lastVel).divideScalar(Math.max(dt, 1e-3)).clampLength(0, 20);
+    accSmooth.lerp(rawAcc, 1 - Math.exp(-dt / .12));
+    feel.copy(accSmooth).clampLength(0, 8).negate();
+    feel.y -= underNow ? 2.6 : 5;                     // buoyancy makes the steel lighter underwater
+    feel.applyQuaternion(invQ.copy(W.root.quaternion).invert()).divideScalar(l.scale);
+    W.bracelet.update(dt, feel.y, feel.z, underNow ? .55 : .2);
+    lastPos.copy(W.root.position); lastVel.copy(vel);
+
+    // --- hands wind with scroll, seconds sweep in real time, bezel turns counter-clockwise
+    const minDeg = 60 + p * 360 * 8;
+    W.minute.rotation.z = -THREE.MathUtils.degToRad(minDeg);
+    W.hour.rotation.z = -THREE.MathUtils.degToRad(305 + (minDeg - 60) / 12);
+    W.second.rotation.z = -((t * 6 + 200) % 360) * Math.PI / 180;
+    W.bezel.rotation.z = p * 2.6;
+
+    // --- camera follows the fall, then the dive
+    // the camera tracks the steady sink (not the flutter, so the wobble reads on screen) and drifts a little with the watch
+    const cy = lerp(l.cy0, baseY + .15 + l.look, ss(.12, .3, p));
+    const cx = wx * .15 * ss(.2, .3, p);
+    camera.position.set(cx, cy, lerp(l.cz0, l.czDeep, ss(.2, .45, p)));
+    target.set(cx, lerp(l.ty0, baseY + l.look, ss(.06, .24, p)), 0);
+    camera.lookAt(target);
+
+    // --- above / below water
+    const under = camera.position.y < 0;
+    const depth = clamp(-cy / (-SEABED - 2));
+    sky.visible = !under;
+    sky.position.copy(camera.position);
+    scene.environment = under ? envBelow : envAbove;
+    if (under) {
+      fogCol.copy(FOG_SHALLOW).lerp(FOG_DEEP, depth);
+      scene.fog.color.copy(fogCol);
+      scene.fog.density = lerp(.04, .058, depth);
+      scene.background = fogCol;
+      waterU.uUnderDeep.value.copy(fogCol);
+      sun.color.set('#9FE9F2'); sun.intensity = lerp(1.2, .3, depth);
+      key.intensity = lerp(1.0, .55, depth);
+      hemi.color.set('#7FD3E0'); hemi.intensity = lerp(.6, .25, depth);
+      renderer.toneMappingExposure = lerp(1.05, .95, depth);
+    } else {
+      scene.fog.color.copy(FOG_ABOVE); scene.fog.density = .0075;
+      scene.background = null;
+      sun.color.set('#FFE3BE'); sun.intensity = 2.6; key.intensity = 1.1;
+      hemi.color.set('#E4EDF1'); hemi.intensity = .45;
+      renderer.toneMappingExposure = 1.05;
+    }
+    W.lume.emissiveIntensity = under ? lerp(.2, 1.8, depth) : 0;
+    seabed.visible = under;
+    splash.pts.visible = !under;
+
+    for (const r of rays) {
+      r.rotation.y = Math.atan2(camera.position.x - r.position.x, camera.position.z - r.position.z);
+      r.material.uniforms.uO.value = under ? .16 * (1 - depth * .75) : 0;
+      r.material.uniforms.uT.value = t;
+      r.visible = under;
+    }
+
+    // --- splash + ripples when the watch crosses the surface
+    if (prevWy !== null && (prevWy > .3) !== (wy > .3)) {
+      const speed = Math.min(Math.abs(wy - prevWy) / Math.max(dt, .001), 12);
+      const n = 90 + speed * 30;
+      for (let i = 0; i < n; i++) {
+        const a = Math.random() * Math.PI * 2, r = .15 + Math.random() * .45, out = 1 + Math.random() * 2.2;
+        emit(splash, wx + Math.cos(a) * r, .05, Math.sin(a) * r * .8,
+          Math.cos(a) * out, 2.2 + Math.random() * 3.2, Math.sin(a) * out * .8, .05 + Math.random() * .08);
+      }
+      watchImp = .25;
+    }
+    if (prevWy !== null && Math.abs(wy) < .8) watchImp = Math.max(watchImp, Math.min(Math.abs(wy - prevWy) * 3, .15));
+    prevWy = wy;
+
+    // --- step the water sim at a fixed 60 Hz
+    if (!simErr) {
+      simAcc += dt;
+      for (let k = 0; simAcc > 1 / 60 && k < 3; k++, simAcc -= 1 / 60) {
+        if (watchImp > 0) {
+          simU.uImp.value.set(wx, 0); simU.uImpSize.value = 1.1; simU.uImpStr.value = 1.2 * watchImp;
+          watchImp = Math.max(0, watchImp - .02);
+        } else if (mouseImp) {
+          simU.uImp.value.set(mouseImp.x, -mouseImp.z); simU.uImpSize.value = .35; simU.uImpStr.value = .05;
+          mouseImp = null;
+        } else simU.uImpStr.value = 0;
+        gpu.compute();
+      }
+      waterU.uHeight.value = gpu.getCurrentRenderTarget(hVar).texture;
+    }
+    waterU.uTime.value = t;
+    bedU.uTime.value = t;
+    bedU.uVis.value = ss(9.5, 5.5, camera.position.y - SEABED); // the floor emerges from the murk as you descend
+    timeU.value = t;
+    // sea life emerges with the seabed; boats only exist above the surface
+    life.visible = under && bedU.uVis.value > .01;
+    if (life.visible) swim(t);
+    boats.visible = !under;
+    for (const f of fleet) { f.b.position.y = Math.sin(t * .8 + f.ph) * .08; f.b.rotation.z = Math.sin(t * .6 + f.ph) * .035; }
+
+    // --- particles
+    if (under || wy < -.2) {
+      const rate = (Math.abs(sinkY(goal) - baseY) > .05 ? 40 : 12) * dt;
+      const n = Math.floor(rate) + (Math.random() < rate % 1 ? 1 : 0);
+      for (let i = 0; i < n; i++)
+        emit(bubbles, wx + (Math.random() - .5) * .6, wy + (Math.random() - .3) * .5, (Math.random() - .5) * .4,
+          0, .5 + Math.random() * .8, 0, .02 + Math.random() * .06);
+    }
+    for (let i = 0; i < bubbles.n; i++) {
+      if (bubbles.life[i] <= 0) { bubbles.alpha[i] = 0; continue; }
+      const o = i * 3;
+      bubbles.vel[o + 1] = Math.min(bubbles.vel[o + 1] + dt * .6, 1.8);
+      bubbles.pos[o] += Math.sin(t * 3 + i) * dt * .15;
+      bubbles.pos[o + 1] += bubbles.vel[o + 1] * dt;
+      bubbles.life[i] -= dt * .12;
+      if (bubbles.pos[o + 1] > -.05) bubbles.life[i] = 0;
+      bubbles.alpha[i] = Math.min(1, bubbles.life[i] * 4) * (under ? 1 : .5);
+    }
+    for (let i = 0; i < splash.n; i++) {
+      if (splash.life[i] <= 0) { splash.alpha[i] = 0; continue; }
+      const o = i * 3;
+      splash.vel[o + 1] -= 9.8 * dt;
+      for (let k = 0; k < 3; k++) splash.pos[o + k] += splash.vel[o + k] * dt;
+      if (splash.pos[o + 1] < 0 && splash.vel[o + 1] < 0) splash.life[i] = 0;
+      splash.alpha[i] = splash.life[i] > 0 ? .95 : 0;
+    }
+    for (let i = 0; i < snow.n; i++) {
+      const o = i * 3;
+      snow.pos[o + 1] -= dt * .04;
+      snow.pos[o] += Math.sin(t * .3 + i) * dt * .03;
+      // keep the field wrapped around the camera
+      const dy = snow.pos[o + 1] - cy;
+      if (dy < -6) snow.pos[o + 1] += 12; else if (dy > 6) snow.pos[o + 1] -= 12;
+      snow.alpha[i] = under && snow.pos[o + 1] < 0 ? .45 : 0;
+    }
+    for (const sys of [bubbles, splash, snow]) {
+      sys.geo.attributes.position.needsUpdate = true;
+      sys.geo.attributes.aA.needsUpdate = true;
+    }
+
+    // --- HUD
+    const m = clamp(-wy / (-SEABED - 2.3));
+    gauge.style.opacity = under ? 1 : 0;
+    gaugeFill.style.transform = `scaleY(${m})`;
+    gaugeLbl.style.top = Math.min(m, .9) * 100 + '%';
+    gaugeLbl.textContent = Math.round(m * 300) + ' m';
+
+    renderer.render(scene, camera);
+    if (first) { first = false; canvas.classList.add('ready'); }
+  });
+}
+
+/* =====================================================================
+   Procedural Longines HydroConquest (blue, 42 mm, steel bracelet).
+   Units: case radius = 1. Dial faces +Z, 12 o'clock is +Y.
+   ===================================================================== */
+function buildWatch(renderer) {
+  const root = new THREE.Group();
+  const aniso = renderer.capabilities.getMaxAnisotropy();
+  const steel = new THREE.MeshPhysicalMaterial({ color: '#F0F2F5', metalness: 1, roughness: .1, side: THREE.DoubleSide });
+  const brushed = new THREE.MeshPhysicalMaterial({ color: '#DADDE1', metalness: 1, roughness: .26 });
+  const lume = new THREE.MeshStandardMaterial({ color: '#F1F4EE', roughness: .45, emissive: '#7CFFD4', emissiveIntensity: 0 });
+  const add = (geo, mat, x = 0, y = 0, z = 0, parent = root) => {
+    const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); parent.add(m); return m;
+  };
+  const gear = (n, r1, r2, hole) => {
+    const s = new THREE.Shape();
+    for (let i = 0; i <= n * 2; i++) {
+      const a = i / (n * 2) * Math.PI * 2, r = i % 2 ? r1 : r2;
+      i ? s.lineTo(Math.cos(a) * r, Math.sin(a) * r) : s.moveTo(Math.cos(a) * r, Math.sin(a) * r);
+    }
+    if (hole) { const h = new THREE.Path(); h.absarc(0, 0, hole, 0, Math.PI * 2, true); s.holes.push(h); }
+    return s;
+  };
+  const lathe = pts => new THREE.LatheGeometry(pts.map(([r, z]) => new THREE.Vector2(r, z)), 128).rotateX(Math.PI / 2);
+
+  // case: one machined piece (round middle, tapered lugs, crown-guard shoulder) with a polished bevel,
+  // lugs bent down toward the wrist, and a domed screw-down caseback
+  const D = THREE.MathUtils.degToRad, R0 = .97;
+  const cs = new THREE.Shape();
+  cs.absarc(0, 0, R0, D(-40), D(-16), false);
+  cs.absarc(0, 0, 1.04, D(-13), D(13), false);
+  cs.absarc(0, 0, R0, D(16), D(40), false);
+  cs.quadraticCurveTo(.72, .95, .62, 1.21); cs.lineTo(.41, 1.21); cs.lineTo(.41, .879);
+  cs.absarc(0, 0, R0, D(65), D(115), false);
+  cs.lineTo(-.41, 1.21); cs.lineTo(-.62, 1.21); cs.quadraticCurveTo(-.72, .95, -.743, .623);
+  cs.absarc(0, 0, R0, D(140), D(220), false);
+  cs.quadraticCurveTo(-.72, -.95, -.62, -1.21); cs.lineTo(-.41, -1.21); cs.lineTo(-.41, -.879);
+  cs.absarc(0, 0, R0, D(245), D(295), false);
+  cs.lineTo(.41, -1.21); cs.lineTo(.62, -1.21); cs.quadraticCurveTo(.72, -.95, .743, -.623);
+  const aperture = new THREE.Path(); aperture.absarc(0, 0, .8, 0, Math.PI * 2, true); cs.holes.push(aperture);
+  const caseGeo = new THREE.ExtrudeGeometry(cs, { depth: .2, bevelEnabled: true, bevelThickness: .04, bevelSize: .03, bevelSegments: 4, curveSegments: 48 }).translate(0, 0, -.1);
+  const cp = caseGeo.attributes.position;
+  for (let i = 0; i < cp.count; i++) { // bend the lugs (original normals kept: the bend is gentle)
+    const ay = Math.abs(cp.getY(i));
+    if (ay > .9) cp.setZ(i, cp.getZ(i) - Math.pow(ay - .9, 1.6) * 1.1);
+  }
+  add(caseGeo, steel);
+  add(lathe([[0, -.2], [.55, -.195], [.8, -.17], [.9, -.14]]), brushed);
+  add(new THREE.ExtrudeGeometry(gear(26, .125, .14), { depth: .15, bevelEnabled: true, bevelThickness: .015, bevelSize: .012, bevelSegments: 2 }).rotateY(Math.PI / 2), steel, 1.04, 0, 0);
+  add(new THREE.CylinderGeometry(.07, .07, .08, 24).rotateZ(Math.PI / 2), steel, 1.03, 0, 0); // crown tube
+
+  // rotating bezel: coin-edge steel ring + blue ceramic insert
+  const bezel = new THREE.Group(); bezel.position.z = .152; root.add(bezel);
+  add(new THREE.ExtrudeGeometry(gear(120, 1.012, 1.03, .82), { depth: .06, bevelEnabled: true, bevelThickness: .012, bevelSize: .01, bevelSegments: 2, curveSegments: 96 }), steel, 0, 0, 0, bezel);
+  const insertTex = canvasTex(bezelCanvas(), aniso);
+  add(new THREE.RingGeometry(.83, 1.0, 128, 1), new THREE.MeshPhysicalMaterial({ map: insertTex, roughness: .2, clearcoat: 1, clearcoatRoughness: .04 }), 0, 0, .074, bezel);
+
+  // flange, dial, crystal
+  add(lathe([[.76, .095], [.81, .215]]), new THREE.MeshStandardMaterial({ color: '#1A2F6B', roughness: .55, side: THREE.DoubleSide }));
+  add(new THREE.CircleGeometry(.765, 128), new THREE.MeshPhysicalMaterial({ map: canvasTex(dialCanvas(), aniso), roughness: .36, metalness: .35, clearcoat: .5, clearcoatRoughness: .2 }), 0, 0, .095);
+  const crystal = add(new THREE.CylinderGeometry(.81, .81, .03, 96).rotateX(Math.PI / 2), new THREE.MeshPhysicalMaterial({
+    color: '#FFFFFF', roughness: 0, metalness: 0, transparent: true, opacity: .14, clearcoat: 1, envMapIntensity: 2.5, depthWrite: false,
+  }), 0, 0, .205);
+  crystal.renderOrder = 1;
+
+  // applied indices: inverted triangle at 12, dots at 6 and 9, date window at 3, batons elsewhere
+  const baton = new RoundedBoxGeometry(.07, .17, .03, 2, .012), batonLume = new THREE.BoxGeometry(.04, .14, .012);
+  const dot = new THREE.CylinderGeometry(.06, .06, .03, 32).rotateX(Math.PI / 2), dotLume = new THREE.CylinderGeometry(.045, .045, .012, 32).rotateX(Math.PI / 2);
+  const tri = s => new THREE.ExtrudeGeometry(new THREE.Shape([new THREE.Vector2(-.085 * s, .09 * s), new THREE.Vector2(.085 * s, .09 * s), new THREE.Vector2(0, -.1 * s)]), { depth: .015 * s + .01, bevelEnabled: false });
+  for (let h = 0; h < 12; h++) {
+    if (h === 3) continue;
+    const a = h / 12 * Math.PI * 2, r = h === 0 ? .56 : .6;
+    const g = new THREE.Group(); g.position.set(Math.sin(a) * r, Math.cos(a) * r, .095); g.rotation.z = -a; root.add(g);
+    if (h === 0) { add(tri(1), steel, 0, 0, 0, g); add(tri(.7), lume, 0, .005, .012, g); }
+    else if (h === 6 || h === 9) { add(dot, steel, 0, 0, .015, g); add(dotLume, lume, 0, 0, .03, g); }
+    else { add(baton, steel, 0, 0, .015, g); add(batonLume, lume, 0, 0, .03, g); }
+  }
+
+  // hands (pivot at centre, pointing +Y)
+  const handShape = pts => new THREE.Shape(pts.map(([x, y]) => new THREE.Vector2(x, y)));
+  const flat = (shape, d) => new THREE.ExtrudeGeometry(shape, { depth: d, bevelEnabled: false });
+  const sword = (w, len, tail) => [[-w * .7, -tail], [-w, .05], [-w * .8, len * .85], [0, len], [w * .8, len * .85], [w, .05], [w * .7, -tail]];
+  const scalePts = (pts, sx, sy, oy) => pts.map(([x, y]) => [x * sx, y * sy + oy]);
+  const hour = new THREE.Group(), minute = new THREE.Group(), second = new THREE.Group();
+  hour.position.z = .13; minute.position.z = .148; second.position.z = .166;
+  root.add(hour, minute, second);
+  const hp = sword(.055, .42, .1), mp = sword(.04, .66, .13);
+  add(flat(handShape(hp), .012), steel, 0, 0, 0, hour);
+  add(flat(handShape(scalePts(hp.slice(1, 6), .5, .78, .05)), .004), lume, 0, 0, .012, hour);
+  add(flat(handShape(mp), .012), steel, 0, 0, 0, minute);
+  add(flat(handShape(scalePts(mp.slice(1, 6), .45, .86, .05)), .004), lume, 0, 0, .012, minute);
+  add(new THREE.BoxGeometry(.014, .9, .008), steel, 0, .26, 0, second);
+  add(new THREE.TorusGeometry(.045, .012, 10, 36), steel, 0, .48, 0, second);
+  add(new THREE.CircleGeometry(.036, 32), lume, 0, .48, .002, second);
+  add(new THREE.CylinderGeometry(.035, .035, .02, 24).rotateX(Math.PI / 2), steel, 0, -.15, 0, second);
+  add(new THREE.CylinderGeometry(.04, .04, .03, 32).rotateX(Math.PI / 2), steel, 0, 0, .18);
+
+  // ---------------- articulated bracelet ----------------
+  // A closed loop, as a watch lies when it's dropped: end link, 7 three-piece links, folding clasp, 7 links, end link.
+  // Every joint is a pin hinge, so the loop lives in the watch's local YZ plane. Its relaxed shape is solved once at
+  // build time: links keep their length, only curl inward (like a real bracelet), and stay clear of the case.
+  const LINK = .3, NSIDE = 8, CLASP = 1.1;
+  const lens = [...Array(NSIDE).fill(LINK), CLASP, ...Array(NSIDE).fill(LINK)];
+  const NJ = lens.length + 1, last = NJ - 1;
+  const PIN_TOP = new THREE.Vector2(1.08, -.08), PIN_BOT = new THREE.Vector2(-1.08, -.08); // (y, z)
+  const J = [];
+  { // start on the circle through both lug pins whose rear arc matches the bracelet length
+    const total = lens.reduce((a, b) => a + b, 0);
+    let lo = 1.09, hi = 4, R = 2;
+    for (let i = 0; i < 40; i++) { R = (lo + hi) / 2; (R * (Math.PI + 2 * Math.acos(1.08 / R)) > total) ? hi = R : lo = R; }
+    const zc = -.08 - Math.sqrt(R * R - 1.08 * 1.08), phi0 = Math.acos(1.08 / R);
+    let sAcc = 0;
+    for (let i = 0; i < NJ; i++) {
+      const a = phi0 - sAcc / R;
+      J.push(new THREE.Vector2(R * Math.cos(a), zc + R * Math.sin(a)));
+      sAcc += lens[i] || 0;
+    }
+  }
+  const IN = -.62, OUT = .08;                         // per-joint bend limits (radians): curl in, barely out
+  const fakeTop = new THREE.Vector2(PIN_TOP.x - .3, PIN_TOP.y), fakeBot = new THREE.Vector2(PIN_BOT.x + .3, PIN_BOT.y);
+  const va = new THREE.Vector2(), vb = new THREE.Vector2(), vd = new THREE.Vector2();
+  const rot = (v, t) => v.set(v.x * Math.cos(t) - v.y * Math.sin(t), v.x * Math.sin(t) + v.y * Math.cos(t));
+  function bend(pPrev, p, pNext, wPrev, wNext, lo, hi) {
+    va.subVectors(p, pPrev); vb.subVectors(pNext, p);
+    const phi = Math.atan2(va.x * vb.y - va.y * vb.x, va.dot(vb));
+    const e = clamp(phi > hi ? phi - hi : phi < lo ? phi - lo : 0, -.25, .25); // small corrections keep Verlet stable
+    if (!e || wPrev + wNext === 0) return;
+    const sa = wPrev / (wPrev + wNext), sb = wNext / (wPrev + wNext);
+    if (wPrev) pPrev.copy(p).sub(rot(va, e * sa));
+    if (wNext) pNext.copy(p).add(rot(vb, -e * sb));
+  }
+  function solve() {
+    J[0].copy(PIN_TOP); J[last].copy(PIN_BOT);
+    for (let i = 0; i < last; i++) {                  // keep every link its own length
+      const a = J[i], b = J[i + 1], wa = i === 0 ? 0 : 1, wb = i + 1 === last ? 0 : 1;
+      vd.subVectors(b, a); const d = vd.length() || 1e-6, k = (d - lens[i]) / d / (wa + wb);
+      a.addScaledVector(vd, k * wa); b.addScaledVector(vd, -k * wb);
+    }
+    bend(fakeTop, J[0], J[1], 0, 1, -1.0, .15);       // end links pivot on the lug pins
+    for (let i = 1; i < last; i++) bend(J[i - 1], J[i], J[i + 1], i - 1 === 0 ? 0 : 1, i + 1 === last ? 0 : 1, IN, OUT);
+    bend(J[last - 1], J[last], fakeBot, 1, 0, -1.0, .15);
+    for (let i = 1; i < last; i++) {                  // stay behind the case
+      if (Math.abs(J[i].x) < 1.02 && J[i].y > -.26) J[i].y = -.26;
+    }
+  }
+  for (let i = 0; i < 200; i++) solve();
+  const rest = J.map(v => v.clone());
+
+  // The bracelet is drawn as two continuous bands fitted through the simulated joints (as a real bracelet reads):
+  // a brushed outer band and a raised polished centre strip, with link gaps in their textures (centre staggered by half a link).
+  const linkTex = (base, light, groove, stagger, brushed) => {
+    const c = document.createElement('canvas'); c.width = c.height = 128;
+    const g = c.getContext('2d');
+    const grd = g.createLinearGradient(0, 0, 128, 0);
+    grd.addColorStop(0, base); grd.addColorStop(.5, light); grd.addColorStop(1, base);
+    g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
+    if (brushed) for (let i = 0; i < 220; i++) {         // fine brushing across the link
+      g.fillStyle = `rgba(${Math.random() < .5 ? '255,255,255' : '40,44,50'},${Math.random() * .08})`;
+      g.fillRect(0, Math.random() * 128, 128, 1);
+    }
+    const y = stagger ? 62 : 0;
+    g.fillStyle = groove; g.fillRect(0, y, 128, 4);       // the gap between links
+    g.fillStyle = 'rgba(255,255,255,.35)'; g.fillRect(0, y + 4, 128, 1);
+    const t = canvasTex(c, aniso); t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    return t;
+  };
+  const bandMat = new THREE.MeshPhysicalMaterial({ color: '#E3E6EA', metalness: 1, roughness: .3, side: THREE.DoubleSide, map: linkTex('#C9CDD2', '#E9EBEE', '#2E3338', false, true) });
+  const stripMat = new THREE.MeshPhysicalMaterial({ color: '#F4F6F8', metalness: 1, roughness: .08, side: THREE.DoubleSide, map: linkTex('#DADDE1', '#FFFFFF', '#30353B', true, false) });
+  const curves = [0, 1].map(() => new THREE.CatmullRomCurve3(Array.from({ length: NSIDE + 1 }, () => new THREE.Vector3()), false, 'centripetal'));
+  const superellipse = (n, hw, ht) => Array.from({ length: n + 1 }, (_, k) => {
+    const a = k / n * Math.PI * 2, c = Math.cos(a), sn = Math.sin(a);
+    return [Math.sign(c) * Math.pow(Math.abs(c), .45) * hw, Math.sign(sn) * Math.pow(Math.abs(sn), .45) * ht, k / n];
+  });
+  function band(mat, prof, zOff, w0, w1) {
+    const RINGS = NSIDE * 8 + 1, P = prof.length;
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(RINGS * P * 3), uv = new Float32Array(RINGS * P * 2), index = [];
+    for (let r = 0; r < RINGS; r++) for (let k = 0; k < P; k++) {
+      uv[(r * P + k) * 2] = prof[k][2]; uv[(r * P + k) * 2 + 1] = r / (RINGS - 1) * NSIDE;
+      if (r < RINGS - 1 && k < P - 1) { const a = r * P + k, b = a + P; index.push(a, b, a + 1, b, b + 1, a + 1); }
+    }
+    geo.setIndex(index);
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3).setUsage(THREE.DynamicDrawUsage));
+    geo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+    const mesh = new THREE.Mesh(geo, mat); mesh.frustumCulled = false; root.add(mesh);
+    const pt = new THREE.Vector3(), tg = new THREE.Vector3();
+    return (curve, pinAtStart) => {
+      for (let r = 0; r < RINGS; r++) {
+        const u = r / (RINGS - 1);
+        curve.getPointAt(u, pt); curve.getTangentAt(u, tg);
+        const w = lerp(w0, w1, pinAtStart ? u : 1 - u);         // taper from the lugs toward the clasp
+        for (let k = 0; k < P; k++) {
+          const x = prof[k][0] * w, z = prof[k][1] + zOff, o = (r * P + k) * 3;
+          pos[o] = x; pos[o + 1] = pt.y - tg.z * z; pos[o + 2] = pt.z + tg.y * z;
+        }
+      }
+      geo.attributes.position.needsUpdate = true;
+      geo.computeVertexNormals();
+    };
+  }
+  const outerProf = superellipse(28, .5, .05), stripProf = superellipse(20, .5, .028);
+  const bands = [0, 1].map(() => [band(bandMat, outerProf, 0, .76, .64), band(stripMat, stripProf, .042, .19, .17)]);
+
+  const clasp = new THREE.Group(); clasp.matrixAutoUpdate = false; root.add(clasp);
+  add(new RoundedBoxGeometry(.62, 1.06, .1, 4, .04), brushed, 0, 0, -.01, clasp);           // folding blade
+  add(new RoundedBoxGeometry(.52, .9, .05, 4, .022), steel, 0, .02, .055, clasp);           // polished cover
+  add(new THREE.BoxGeometry(.44, .004, .01), new THREE.MeshStandardMaterial({ color: '#6F757C', metalness: 1, roughness: .4 }), 0, -.28, .081, clasp); // fold line
+  const pusher = new THREE.CylinderGeometry(.045, .05, .07, 20).rotateZ(Math.PI / 2);
+  add(pusher, steel, .33, .3, .02, clasp); add(pusher, steel, -.33, .3, .02, clasp);
+  const barrel = new THREE.CylinderGeometry(.045, .045, .6, 20).rotateZ(Math.PI / 2);
+  add(barrel, steel, 0, .55, -.01, clasp); add(barrel, steel, 0, -.55, -.01, clasp);
+  const eng = document.createElement('canvas'); eng.width = 512; eng.height = 128;
+  { const g = eng.getContext('2d'); g.fillStyle = '#fff'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    if ('letterSpacing' in g) g.letterSpacing = '10px';
+    g.font = '600 70px "Cormorant Garamond", Georgia, serif'; g.fillText('LONGINES', 256, 66); }
+  const engraving = add(new THREE.PlaneGeometry(.42, .105), new THREE.MeshStandardMaterial({
+    color: '#4A5058', metalness: 1, roughness: .5, alphaMap: canvasTex(eng, aniso), transparent: true, depthWrite: false,
+  }), 0, .08, .0815, clasp);
+  engraving.rotation.z = -Math.PI / 2;
+
+  // Place an object along the chain: X = pin axis, Y = along the bracelet, Z = outward face.
+  const m4 = new THREE.Matrix4();
+  function draw() {
+    for (let side = 0; side < 2; side++) {
+      const pts = curves[side].points;
+      for (let i = 0; i <= NSIDE; i++) { const j = J[side ? NSIDE + 1 + i : i]; pts[i].set(0, j.x, j.y); }
+      curves[side].updateArcLengths();
+      for (const f of bands[side]) f(curves[side], side === 0);
+    }
+    vd.subVectors(J[NSIDE + 1], J[NSIDE]).normalize();
+    const y = (J[NSIDE].x + J[NSIDE + 1].x) / 2, z = (J[NSIDE].y + J[NSIDE + 1].y) / 2;
+    clasp.matrix.copy(m4.set(1, 0, 0, 0, 0, vd.x, -vd.y, y, 0, vd.y, vd.x, z, 0, 0, 0, 1));
+  }
+  draw();
+
+  // ay, az: acceleration felt by the bracelet in the watch's frame (gravity minus the watch's own acceleration).
+  // A free chain can fold into a tangle the solver can't resolve (that's what made it jitter), so the loop flexes
+  // around its relaxed shape in two smooth modes, each a damped spring stepped at a fixed 120 Hz:
+  //   sway   - largest at the clasp, zero at the lugs; gravity sags it, the watch's motion swings it with a lag
+  //   ripple - the two halves move opposite ways; kicked by sudden changes in motion, then settles
+  // Afterwards every link is put back to its exact length and kept behind the case. Deterministic at any frame rate.
+  const total = lens.reduce((x, y) => x + y, 0), sway = [], ripple = [];
+  for (let i = 0, acc = 0; i < NJ; acc += lens[i++] || 0) { sway.push(Math.sin(Math.PI * acc / total)); ripple.push(Math.sin(2 * Math.PI * acc / total)); }
+  const A = new THREE.Vector2(), Av = new THREE.Vector2(), B = new THREE.Vector2(), Bv = new THREE.Vector2(), lastF = new THREE.Vector2();
+  const K1 = 30, K2 = 60, H = 1 / 120;
+  let pending = 0;
+  function fixLengths() {
+    for (let i = 0; i < last; i++) {
+      const a = J[i], b = J[i + 1], wa = i === 0 ? 0 : 1, wb = i + 1 === last ? 0 : 1;
+      vd.subVectors(b, a); const d = vd.length() || 1e-6, k = (d - lens[i]) / d / (wa + wb);
+      a.addScaledVector(vd, k * wa); b.addScaledVector(vd, -k * wb);
+    }
+    for (let i = 1; i < last; i++) if (Math.abs(J[i].x) < 1.02 && J[i].y > -.26) J[i].y = -.26;
+  }
+  function update(dt, ay, az, zeta) {
+    pending = Math.min(pending + dt, .1);
+    const jy = (ay - lastF.x) / Math.max(dt, 1e-3), jz = (az - lastF.y) / Math.max(dt, 1e-3);
+    lastF.set(ay, az);
+    const c1 = 2 * zeta * Math.sqrt(K1), c2 = 2 * zeta * Math.sqrt(K2);
+    while (pending >= H) {
+      pending -= H;
+      Av.x += (ay - K1 * A.x - c1 * Av.x) * H; Av.y += (az - K1 * A.y - c1 * Av.y) * H;
+      A.addScaledVector(Av, H).clampLength(0, .45);
+      Bv.x += (clamp(jy, -60, 60) * .06 - K2 * B.x - c2 * Bv.x) * H; Bv.y += (clamp(jz, -60, 60) * .06 - K2 * B.y - c2 * Bv.y) * H;
+      B.addScaledVector(Bv, H).clampLength(0, .18);
+    }
+    for (let i = 0; i < NJ; i++) J[i].set(rest[i].x + A.x * sway[i] + B.x * ripple[i], rest[i].y + A.y * sway[i] + B.y * ripple[i]);
+    for (let it = 0; it < 6; it++) fixLengths();
+    draw();
+  }
+
+  return { root, hour, minute, second, bezel, lume, bracelet: { update } };
+}
+
+function canvasTex(c, aniso) {
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = aniso;
+  return t;
+}
+
+function dialCanvas() {
+  const S = 1024, R = S / 2, k = R / .765, c = document.createElement('canvas');
+  c.width = c.height = S;
+  const g = c.getContext('2d');
+  g.translate(R, R);
+  const rg = g.createRadialGradient(-R * .2, -R * .25, R * .05, 0, 0, R);
+  rg.addColorStop(0, '#3A6CCB'); rg.addColorStop(.55, '#1E4196'); rg.addColorStop(1, '#0B1D55');
+  g.fillStyle = rg; g.fillRect(-R, -R, S, S);
+  for (let i = 0; i < 720; i++) { // sunray brushing
+    const a = i / 720 * Math.PI * 2;
+    g.strokeStyle = i % 2 ? 'rgba(255,255,255,.04)' : 'rgba(0,0,40,.06)';
+    g.lineWidth = 2.2; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(a) * R, Math.sin(a) * R); g.stroke();
+  }
+  g.fillStyle = 'rgba(255,255,255,.9)';
+  for (let i = 0; i < 60; i++) { // minute track
+    g.save(); g.rotate(i / 60 * Math.PI * 2);
+    const w = i % 5 ? 2 : 4; g.fillRect(-w / 2, -.745 * k, w, (i % 5 ? .03 : .045) * k);
+    g.restore();
+  }
+  g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#F4F6F8';
+  if ('letterSpacing' in g) g.letterSpacing = '5px';
+  g.font = `600 ${.098 * k}px "Cormorant Garamond", Georgia, serif`;
+  g.fillText('LONGINES', 0, -.34 * k);
+  if ('letterSpacing' in g) g.letterSpacing = '2px';
+  g.font = `500 ${.045 * k}px "Plus Jakarta Sans", sans-serif`;
+  g.fillText('HYDROCONQUEST', 0, .2 * k);
+  g.font = `400 ${.036 * k}px "Plus Jakarta Sans", sans-serif`;
+  g.fillText('30bar (300meter)', 0, .26 * k);
+  g.font = `500 ${.028 * k}px "Plus Jakarta Sans", sans-serif`;
+  g.fillText('SWISS', -.12 * k, .66 * k); g.fillText('MADE', .12 * k, .66 * k);
+  // date window at 3 o'clock
+  g.fillStyle = '#F7F7F4'; g.fillRect(.43 * k, -.055 * k, .14 * k, .11 * k);
+  g.strokeStyle = '#C9CED6'; g.lineWidth = 3; g.strokeRect(.43 * k, -.055 * k, .14 * k, .11 * k);
+  g.fillStyle = '#111'; if ('letterSpacing' in g) g.letterSpacing = '0px';
+  g.font = `600 ${.08 * k}px "Plus Jakarta Sans", sans-serif`;
+  g.fillText(String(new Date().getDate()), .5 * k, .005 * k);
+  return c;
+}
+
+function bezelCanvas() {
+  const S = 1024, R = S / 2, k = R / 1.0, c = document.createElement('canvas');
+  c.width = c.height = S;
+  const g = c.getContext('2d');
+  g.translate(R, R);
+  const rg = g.createRadialGradient(0, 0, .83 * k, 0, 0, k);
+  rg.addColorStop(0, '#1B3C8A'); rg.addColorStop(.5, '#2A55B0'); rg.addColorStop(1, '#173378');
+  g.fillStyle = rg; g.beginPath(); g.arc(0, 0, k, 0, Math.PI * 2); g.fill();
+  g.fillStyle = '#F2F4F7'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = `600 ${.1 * k}px "Plus Jakarta Sans", sans-serif`;
+  for (let i = 0; i < 60; i++) {
+    g.save(); g.rotate(i / 60 * Math.PI * 2);
+    if (i === 0) {
+      g.beginPath(); g.moveTo(-.06 * k, -.975 * k); g.lineTo(.06 * k, -.975 * k); g.lineTo(0, -.865 * k); g.closePath(); g.fill();
+      g.fillStyle = '#C9F5E4'; g.beginPath(); g.arc(0, -.94 * k, .02 * k, 0, Math.PI * 2); g.fill(); g.fillStyle = '#F2F4F7';
+    } else if (i % 10 === 0) g.fillText(String(i), 0, -.915 * k);
+    else if (i % 5 === 0) g.fillRect(-.012 * k, -.975 * k, .024 * k, .1 * k);
+    else if (i < 15) g.fillRect(-.005 * k, -.975 * k, .01 * k, .05 * k);
+    g.restore();
+  }
+  return c;
+}
+</script>
+</body>
+</html>
