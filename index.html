@@ -4,7 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ocean Fine Jewellery — Burlington</title>
-<meta name="description" content="Authorized Longines, G-SHOCK, Rado, Hamilton, Tissot, Mido and Seiko retailer, plus custom jewellery and lab-grown diamonds, in Burlington, Ontario.">
+<meta name="description" content="Authorized dealer for Longines, Rado, Hamilton, Tissot, Mido, Seiko, G-SHOCK, Casio and Bulova, with custom jewellery and lab-grown diamonds, in Burlington, Ontario.">
+<meta name="theme-color" content="#04121C">
+<meta property="og:title" content="Ocean Fine Jewellery — Burlington">
+<meta property="og:description" content="Nine watch houses, custom jewellery and lab-grown diamonds, on Fairview Street in Burlington.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2304121C'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23C29A55' stroke-width='3.5'/%3E%3Cpath d='M12 44c6-5 10-5 16 0s10 5 16 0 10-5 16 0' fill='none' stroke='%23E2C48B' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,12 +21,12 @@
   --spring:cubic-bezier(.22,1,.36,1); --press:cubic-bezier(.32,.72,0,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
 body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--deep);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img,svg{display:block}
 em{font-style:italic;font-weight:300}
-.skip{position:fixed;left:16px;top:-60px;z-index:30;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:99px;transition:top .4s var(--spring)}
+.skip{position:fixed;left:16px;top:-60px;z-index:60;background:var(--ink);color:var(--cream);padding:10px 16px;border-radius:99px;transition:top .4s var(--spring)}
 .skip:focus{top:16px}
 body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.045;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -34,8 +39,22 @@ body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opa
 .brand{font-family:var(--serif);font-size:1.35rem;letter-spacing:.04em;line-height:1}
 .brand span{font-family:var(--sans);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;margin-left:8px;opacity:.7;vertical-align:middle}
 .nav nav{display:flex;gap:22px;font-size:.82rem;letter-spacing:.04em}
-.nav nav a{opacity:.75;transition:opacity .4s var(--spring)}
-.nav nav a:hover{opacity:1}
+.nav nav a{position:relative;opacity:.75;padding:4px 0;transition:opacity .4s var(--spring)}
+.nav nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold-soft);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--spring)}
+.nav nav a:hover,.nav nav a[aria-current="true"]{opacity:1}
+.nav nav a[aria-current="true"]::after{transform:scaleX(1)}
+.menu-btn{display:none;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.1);color:inherit;cursor:pointer;place-items:center}
+.menu-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;fill:none}
+.menu-btn .x{display:none}
+.menu-open .menu-btn .x{display:block}.menu-open .menu-btn .bars{display:none}
+.menu{position:fixed;inset:0;z-index:15;display:grid;place-items:center;background:rgba(4,18,28,.92);color:var(--cream);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;visibility:hidden;transition:opacity .5s var(--spring),visibility 0s .5s}
+.menu-open .menu{opacity:1;visibility:visible;transition-delay:0s}
+.menu-open{overflow:hidden}
+.menu ul{list-style:none;text-align:center;display:grid;gap:18px}
+.menu a{font-family:var(--serif);font-size:clamp(2.2rem,9vw,3.4rem);line-height:1;transform:translateY(20px);opacity:0;transition:transform .7s var(--spring),opacity .7s var(--spring);transition-delay:calc(var(--i)*.06s + .1s)}
+.menu-open .menu a{transform:none;opacity:1}
+.menu small{display:block;margin-top:34px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;opacity:.55}
 
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;gap:14px;padding:7px 7px 7px 24px;border-radius:99px;font-size:.88rem;font-weight:500;letter-spacing:.02em;
@@ -44,6 +63,7 @@ body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opa
 .btn i svg,.link i svg{width:16px;height:16px}
 .btn:hover i{transform:translate(2px,-2px) scale(1.06)}
 .btn:active{transform:scale(.97)}
+:where(a,button,input,select,textarea):focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
 .btn.gold{background:var(--gold);color:var(--deep)}
 .btn.gold i{background:rgba(4,18,28,.12)}
 .btn.gold:hover{background:var(--gold-soft)}
@@ -59,7 +79,7 @@ body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opa
 .link:hover i{transform:translate(2px,-2px);background:rgba(127,127,127,.12)}
 
 /* ---------- the dive ---------- */
-.dive{position:relative;height:1150vh}
+.dive{position:relative;height:750vh}
 .stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;
   background:linear-gradient(180deg,#C9D3D6 0%,#F2E6D2 62%,#2E6E7C 64%,#0B3445 100%)}
 #gl{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity 1.6s var(--spring)}
@@ -78,7 +98,7 @@ body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opa
 .panel .featured{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:.78rem;letter-spacing:.02em;opacity:.8}
 .panel .featured b{font-weight:600}
 .panel .featured:hover{opacity:1}
-.panel.light{color:var(--cream);text-shadow:0 2px 30px rgba(1,10,16,.45)}
+.panel.light{color:var(--cream);text-shadow:0 1px 3px rgba(1,10,16,.55),0 2px 30px rgba(1,10,16,.45)}
 .panel.light h2 em{color:var(--gold-soft)}
 .panel .num{font-family:var(--serif);font-size:1rem;letter-spacing:.2em;color:var(--gold-soft);display:block;margin-bottom:14px}
 .panel .facts{list-style:none;margin-top:22px;display:grid;gap:6px;font-size:.92rem;opacity:.85}
@@ -86,12 +106,28 @@ body::after{content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opa
   font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);transition:opacity .6s var(--spring)}
 .cue::after{content:"";width:1px;height:46px;background:linear-gradient(var(--cream),transparent);animation:cue 2.2s var(--spring) infinite;transform-origin:top}
 @keyframes cue{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.stop-dive{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--cream);background:rgba(4,18,28,.45);border:1px solid rgba(245,239,230,.25);border-radius:99px;padding:10px 18px 10px 14px;cursor:pointer;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .4s var(--spring)}
+.stop-dive[hidden]{display:none}
+.stop-dive:hover{background:rgba(4,18,28,.7)}
+.stop-dive span{width:8px;height:8px;border-radius:2px;background:var(--gold-soft)}
+.autodive .cue,.autodive .hint{display:none}
 .gauge{position:absolute;right:34px;top:22vh;height:56vh;width:1px;background:rgba(245,239,230,.18);color:var(--cream);opacity:0;transition:opacity .6s var(--spring)}
 .gauge i{position:absolute;left:0;top:0;width:1px;height:100%;background:var(--gold-soft);transform-origin:top;transform:scaleY(0)}
 .gauge span{position:absolute;right:12px;top:0;transform:translateY(-50%);font-size:.68rem;letter-spacing:.18em;white-space:nowrap;font-variant-numeric:tabular-nums}
 .gauge small{position:absolute;right:12px;font-size:.56rem;letter-spacing:.22em;opacity:.5;text-transform:uppercase;white-space:nowrap}
 .gauge small:first-of-type{top:-26px}.gauge small:last-of-type{bottom:-26px}
 .hint{position:absolute;right:34px;bottom:26px;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.7;transition:opacity .6s var(--spring)}
+
+/* ---------- brand marquee ---------- */
+.marquee{overflow:hidden;padding:26px 0;border-top:1px solid rgba(245,239,230,.08);border-bottom:1px solid rgba(245,239,230,.08);
+  -webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee ul{display:flex;width:max-content;list-style:none;animation:marquee 46s linear infinite}
+.marquee li{font-family:var(--serif);font-size:1.5rem;letter-spacing:.14em;text-transform:uppercase;padding:0 36px;color:rgba(245,239,230,.72);white-space:nowrap;display:flex;align-items:center;gap:36px}
+.marquee li::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.marquee:hover ul{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
 /* ---------- sections ---------- */
 .wrap{width:min(1240px,100% - 32px);margin:0 auto}
@@ -100,13 +136,16 @@ section.s{padding:clamp(96px,13vw,160px) 0}
 .head h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,5.4vw,4.8rem);line-height:1;letter-spacing:-.015em;margin-bottom:22px}
 .head p{font-size:1.05rem;opacity:.75;max-width:52ch}
 .salon{background:linear-gradient(180deg,#01070c,var(--deep) 30%,#062030);color:var(--cream)}
+section.salon{padding-top:0}
 .salon .head h2 em{color:var(--gold-soft)}
 .shell{border-radius:2rem;padding:6px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08)}
 .core{height:100%;border-radius:calc(2rem - 6px);box-shadow:inset 0 1px 1px rgba(255,255,255,.1)}
 
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.count{margin-left:auto;font-size:.76rem;letter-spacing:.06em;opacity:.55;font-variant-numeric:tabular-nums}
 .filters button{font:inherit;font-size:.8rem;font-weight:500;letter-spacing:.06em;color:var(--cream);background:transparent;border:1px solid rgba(245,239,230,.22);
   border-radius:99px;padding:10px 20px;cursor:pointer;transition:background .5s var(--spring),color .5s var(--spring),border-color .5s var(--spring)}
+.filters button span{opacity:.55;margin-left:4px;font-size:.85em}
 .filters button[aria-pressed="true"]{background:var(--cream);color:var(--deep);border-color:var(--cream)}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .product{transition:opacity .6s var(--spring),transform .6s var(--spring)}
@@ -139,8 +178,16 @@ section.s{padding:clamp(96px,13vw,160px) 0}
 .brands{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em}
 
 .visit{background:linear-gradient(180deg,var(--cream),#EADFCB)}
-.locs{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
-.loc .core{min-height:360px}
+.locs{display:grid;grid-template-columns:1fr 1.15fr;gap:20px}
+.loc .core{min-height:420px}
+.map{min-height:420px;position:relative}
+.map .core{overflow:hidden;padding:0;position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.55) sepia(.22) contrast(1.05) brightness(.98);transition:filter .8s var(--spring)}
+.map:hover iframe{filter:none}
+.open{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;letter-spacing:.04em;margin:4px 0 14px}
+.open::before{content:"";width:8px;height:8px;border-radius:50%;background:#8FB996;box-shadow:0 0 0 4px rgba(143,185,150,.18)}
+.open.closed::before{background:#D9A06B;box-shadow:0 0 0 4px rgba(217,160,107,.18)}
+.loc dd.today,.loc dt.today{color:var(--gold);font-weight:500}
 .loc h3{font-size:clamp(2.6rem,5vw,4.4rem);font-weight:300}
 .loc small{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:auto;padding-bottom:40px}
 .loc p{opacity:.75;margin-bottom:6px}
@@ -159,20 +206,32 @@ input,select,textarea{font:inherit;font-size:.95rem;letter-spacing:normal;text-t
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-soft);background:rgba(255,255,255,.07)}
 select option{background:var(--deep)}
 textarea{min-height:110px;resize:vertical}
+.err{display:none;font-size:.72rem;letter-spacing:.02em;text-transform:none;color:#E8A08F}
+.tried label:has(:invalid) .err{display:block}
+.tried :invalid{border-color:rgba(232,160,143,.7)}
+.form-note{grid-column:1/-1;font-size:.78rem;opacity:.55;margin-top:-6px}
 form .btn{grid-column:1/-1;justify-self:start;margin-top:6px}
 .thanks{grid-column:1/-1;font-family:var(--serif);font-size:1.5rem;color:var(--gold-soft)}
 .contact-list{list-style:none;margin-top:30px;display:grid;gap:10px;font-size:.95rem;opacity:.8}
 
-footer{background:#01070c;color:rgba(245,239,230,.6);padding:56px 0 40px;font-size:.8rem}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
-footer .brand{color:var(--cream)}
+footer{background:#01070c;color:rgba(245,239,230,.6);padding:72px 0 40px;font-size:.84rem}
+footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px;border-bottom:1px solid rgba(245,239,230,.08)}
+footer h4{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);font-weight:500;margin-bottom:16px}
+footer ul{list-style:none;display:grid;gap:8px}
+footer .brand{color:var(--cream);display:inline-block;margin-bottom:14px}
+footer .tag-line{max-width:34ch;line-height:1.7}
+footer a:hover{color:var(--cream)}
+footer .legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:.72rem;opacity:.65;line-height:1.7}
+footer .legal a{text-decoration:underline;text-underline-offset:2px}
 
 .js .reveal{opacity:0;transform:translateY(48px);filter:blur(8px);transition:opacity 1.1s var(--spring),transform 1.1s var(--spring),filter 1.1s var(--spring);transition-delay:var(--dl,0s)}
 .js .reveal.in{opacity:1;transform:none;filter:none}
 
 @media (max-width:1000px){
   .nav nav{display:none}
+  .menu-btn{display:grid}
   .products{grid-template-columns:repeat(2,1fr)}
+  footer .cols{grid-template-columns:1fr 1fr}
 }
 @media (max-width:767px){
   .nav{gap:14px;padding-left:18px;top:12px}
@@ -181,7 +240,7 @@ footer .brand{color:var(--cream)}
   .panel h1{font-size:clamp(2.4rem,10.5vw,3.2rem);margin-bottom:14px}
   .panel h2{font-size:2.2rem;margin-bottom:14px}
   .panel p{font-size:.9rem}
-  .panel .ctas{margin-top:18px;gap:8px;flex-wrap:nowrap}
+  .panel .ctas{margin-top:18px;gap:8px}
   .panel .btn{padding:5px 5px 5px 16px;font-size:.8rem;gap:10px}
   .panel .btn i{width:30px;height:30px}
   .panel .eyebrow{margin-bottom:14px}
@@ -192,12 +251,19 @@ footer .brand{color:var(--cream)}
   .product h3{font-size:1.15rem}
   .product .link span{display:none}
   .bento,.locs,.book-grid{grid-template-columns:1fr}
+  .map{min-height:300px}
+  .marquee li{font-size:1.1rem;padding:0 20px;gap:20px}
+  .count{width:100%;margin:4px 0 0}
+  footer .cols{grid-template-columns:1fr}
+  footer .brand span{display:inline}
   .bento .big{grid-column:auto}
   form .core{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important}
   .js .reveal{transition:none}
+  html{scroll-behavior:auto}
+  .marquee ul{flex-wrap:wrap;width:auto;justify-content:center}
 }
 </style>
 <script type="importmap">
@@ -209,7 +275,8 @@ footer .brand{color:var(--cream)}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs><path id="i-arrow" d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></defs>
+  <defs><path id="i-arrow" d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="i-dive" d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></defs>
 </svg>
 
 <a class="skip" href="#shop">Skip to the watches</a>
@@ -217,53 +284,65 @@ footer .brand{color:var(--cream)}
 <header class="nav">
   <a class="brand" href="#top">Ocean<span>Fine Jewellery</span></a>
   <nav aria-label="Main">
+    <a href="#shop">Watches</a>
     <a href="#services">Services</a>
     <a href="#visit">Visit</a>
     <a href="#book">Book</a>
   </nav>
   <a class="btn gold sm" href="#shop"><span>Shop watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+  <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+    <svg class="bars" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></svg>
+    <svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
 </header>
+<div class="menu" id="menu">
+  <div>
+    <ul>
+      <li><a href="#shop" style="--i:0">Watches</a></li>
+      <li><a href="#services" style="--i:1">Services</a></li>
+      <li><a href="#visit" style="--i:2">Visit</a></li>
+      <li><a href="#book" style="--i:3">Book a visit</a></li>
+    </ul>
+    <small>3-4150 Fairview St, Burlington</small>
+  </div>
+</div>
 
 <main>
 <section class="dive" id="top" aria-label="Introduction">
   <div class="stage" id="stage">
-    <canvas id="gl" aria-label="A Longines HydroConquest falling into the ocean" role="img"></canvas>
+    <canvas id="gl" aria-label="A Longines Présence falling into the ocean" role="img"></canvas>
 
     <div class="panels">
       <article class="panel hero" data-in="-1" data-out=".05">
-        <span class="eyebrow">Burlington · Celebrating 5 years</span>
+        <span class="eyebrow">Burlington · Five years on Fairview</span>
         <h1>Treasures worth <em>diving</em> for.</h1>
-        <p>An authorized retailer of Longines, G-SHOCK, Rado, Hamilton, Tissot, Mido and Seiko, with custom jewellery and lab-grown diamonds.</p>
+        <p>Nine watch houses sold with full warranty, custom jewellery made to order and lab-grown diamonds, all under one roof in Burlington.</p>
         <div class="ctas">
           <a class="btn" href="#shop"><span>Shop watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+          <button class="btn ghost" type="button" id="dive"><span>Dive</span><i><svg viewBox="0 0 24 24"><use href="#i-dive"/></svg></i></button>
           <a class="btn ghost" href="#book"><span>Book a visit</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
         </div>
-        <a class="featured link" href="#shop">On the right: <b>Longines HydroConquest 42 mm</b> · $2,050 <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+        <a class="featured link" href="#shop">Pictured: <b>Longines Présence 40 mm</b> · $1,230 <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
       </article>
-      <article class="panel light" data-in=".13" data-out=".24">
-        <span class="num">I — The House</span>
-        <h2>Built from scratch, <em>five stars</em> since day one.</h2>
-        <p>Five years ago Ocean Fine Jewellery opened its doors in Burlington. Today it is a trusted part of the community, with only five-star Google reviews since the very first day.</p>
+      <article class="panel light" data-in=".16" data-out=".44">
+        <span class="num">I — The boutique</span>
+        <h2>Small shop, <em>five stars,</em> five years.</h2>
+        <p>We opened on Fairview Street five years ago with one counter and a handful of brands. Every Google review since has been five stars, so we have kept doing things the same way.</p>
       </article>
-      <article class="panel light right" data-in=".46" data-out=".55">
-        <span class="num">II — Timepieces</span>
-        <h2>From G-SHOCK to <em>Legend Diver.</em></h2>
-        <p>Eight authorized brands under one roof, from a $149 G-SHOCK to a Longines Legend Diver. Every watch is sized and fitted in-boutique, with a wide range of straps to make it yours.</p>
-      </article>
-      <article class="panel light right" data-in=".58" data-out=".655">
-        <span class="num">III — Bespoke</span>
-        <h2>Custom jewellery, <em>lab-grown</em> brilliance.</h2>
-        <p>Design a piece from scratch, or choose from high-quality lab-grown diamonds, set in rings, pendants, earrings and bracelets.</p>
+      <article class="panel light right" data-in=".51" data-out=".79">
+        <span class="num">II — Jewellery</span>
+        <h2>Made for you, <em>from a sketch.</em></h2>
+        <p>Bring a drawing, a photo or a stone that has been in the family. We design the piece with you and set it in natural or lab-grown diamonds.</p>
       </article>
       <article class="panel light" data-in=".86" data-out="2">
-        <span class="num">IV — Visit</span>
-        <h2>One boutique, <em>on Fairview.</em></h2>
+        <span class="num">III — Visit</span>
+        <h2>Find us <em>on Fairview.</em></h2>
         <ul class="facts">
           <li>3-4150 Fairview St, Burlington</li>
           <li><a href="tel:+19053333553">905-333-3553</a></li>
         </ul>
         <div class="ctas">
-          <a class="btn gold" href="#shop"><span>Explore the watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+          <a class="btn gold" href="#shop"><span>See the watches</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
           <a class="btn ghost" href="#book"><span>Book an appointment</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
         </div>
       </article>
@@ -271,69 +350,174 @@ footer .brand{color:var(--cream)}
 
     <div class="gauge" id="gauge" aria-hidden="true"><i></i><small>Surface</small><span>0 m</span><small>300 m</small></div>
     <div class="cue" id="cue" aria-hidden="true">Scroll to dive</div>
+    <button class="stop-dive" id="stopDive" type="button" hidden><span></span>Stop the dive</button>
     <div class="hint" id="hint" aria-hidden="true">Move across the water</div>
   </div>
 </section>
 
 <section class="s salon" id="shop">
+  <div class="marquee" aria-hidden="true">
+    <ul>
+      <li>Longines</li><li>Rado</li><li>Hamilton</li><li>Tissot</li><li>Mido</li><li>Seiko</li><li>G-SHOCK</li><li>Casio</li><li>Bulova</li>
+      <li>Longines</li><li>Rado</li><li>Hamilton</li><li>Tissot</li><li>Mido</li><li>Seiko</li><li>G-SHOCK</li><li>Casio</li><li>Bulova</li>
+    </ul>
+  </div>
   <div class="wrap">
-    <header class="head reveal">
-      <span class="eyebrow">The Watch Salon</span>
-      <h2>Longines &amp; G-SHOCK, <em>in stock now.</em></h2>
-      <p>A selection from the boutique's current catalogue. Every piece can be tried on, sized and fitted in Burlington.</p>
+    <header class="head reveal" style="margin-top:clamp(56px,8vw,96px)">
+      <span class="eyebrow">The watches</span>
+      <h2>Nine brands, <em>chosen by hand.</em></h2>
+      <p>A short selection from each house we carry. Any of them can be tried on, sized and fitted in Burlington.</p>
     </header>
     <div class="filters reveal" role="group" aria-label="Filter by brand">
-      <button type="button" data-f="all" aria-pressed="true">All</button>
-      <button type="button" data-f="longines" aria-pressed="false">Longines</button>
-      <button type="button" data-f="gshock" aria-pressed="false">G-SHOCK</button>
+      <button type="button" data-f="all" data-label="Browse every timepiece" data-url="https://www.oceanfinejewellery.com/timepieces/" aria-pressed="true">All</button>
+      <button type="button" data-f="longines" data-label="All Longines at the boutique" data-url="https://www.oceanfinejewellery.com/brands/longines/" aria-pressed="false">Longines <span>4</span></button>
+      <button type="button" data-f="rado" data-label="All Rado at the boutique" data-url="https://www.oceanfinejewellery.com/brands/rado/" aria-pressed="false">Rado <span>3</span></button>
+      <button type="button" data-f="hamilton" data-label="All Hamilton at the boutique" data-url="https://www.oceanfinejewellery.com/brands/hamilton/" aria-pressed="false">Hamilton <span>3</span></button>
+      <button type="button" data-f="tissot" data-label="All Tissot at the boutique" data-url="https://www.oceanfinejewellery.com/brands/tissot/" aria-pressed="false">Tissot <span>3</span></button>
+      <button type="button" data-f="mido" data-label="All Mido at the boutique" data-url="https://www.oceanfinejewellery.com/brands/mido/" aria-pressed="false">Mido <span>3</span></button>
+      <button type="button" data-f="seiko" data-label="All Seiko at the boutique" data-url="https://www.oceanfinejewellery.com/brands/seiko/" aria-pressed="false">Seiko <span>3</span></button>
+      <button type="button" data-f="gshock" data-label="All G-SHOCK at the boutique" data-url="https://www.oceanfinejewellery.com/timepieces/casio-g-shock/" aria-pressed="false">G-SHOCK <span>3</span></button>
+      <button type="button" data-f="casio" data-label="All Casio at the boutique" data-url="https://www.oceanfinejewellery.com/brands/casio/" aria-pressed="false">Casio <span>2</span></button>
+      <button type="button" data-f="bulova" data-label="All Bulova at the boutique" data-url="https://www.oceanfinejewellery.com/brands/bulova/" aria-pressed="false">Bulova <span>2</span></button>
+      <span class="count" id="count" aria-live="polite"></span>
     </div>
     <div class="products">
       <article class="shell product feat reveal" data-brand="longines"><div class="core">
-        <figure><img src="assets/products/76740449.jpg" alt="Longines HydroConquest 42 mm, blue dial, steel bracelet" loading="lazy"><span class="tag">As seen above</span></figure>
-        <div class="meta"><small>Longines</small><h3>HydroConquest 42 mm</h3><span class="ref">L3.769.4.96.6 · Quartz · 300 m</span>
+        <figure><img src="assets/products/41750537.jpg" alt="Longines Présence 40 mm" loading="lazy"><span class="tag">Pictured in the dive</span></figure>
+        <div class="meta"><small>Longines</small><h3>Présence 40 mm</h3><span class="ref">L4.922.4.11.6 · Automatic</span>
+          <div class="row"><span class="price">$1,230</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l49224116.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="longines"><div class="core">
+        <figure><img src="assets/products/76740449.jpg" alt="Longines HydroConquest 42 mm" loading="lazy"></figure>
+        <div class="meta"><small>Longines</small><h3>HydroConquest 42 mm</h3><span class="ref">L3.769.4.96.6 · 300 m</span>
           <div class="row"><span class="price">$2,050</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l37694966.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
       </div></article>
-      <article class="shell product reveal" data-brand="gshock"><div class="core">
-        <figure><img src="assets/products/77729407.jpg" alt="G-SHOCK GA2100-1A1, all black" loading="lazy"></figure>
-        <div class="meta"><small>G-SHOCK</small><h3>GA-2100 Black</h3><span class="ref">GA2100-1A1</span>
-          <div class="row"><span class="price">$149</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/ga2100-1a1.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
-      </div></article>
       <article class="shell product reveal" data-brand="longines" style="--dl:.08s"><div class="core">
-        <figure><img src="assets/products/77700927.jpg" alt="Longines Legend Diver 59, black dial, mesh bracelet" loading="lazy"></figure>
+        <figure><img src="assets/products/77700927.jpg" alt="Longines Legend Diver 59" loading="lazy"></figure>
         <div class="meta"><small>Longines</small><h3>Legend Diver 59</h3><span class="ref">L37954599</span>
           <div class="row"><span class="price">$5,400</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l37954599.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
       </div></article>
+      <article class="shell product reveal" data-brand="longines"><div class="core">
+        <figure><img src="assets/products/75883377.jpg" alt="Longines Spirit Zulu Time 39 mm" loading="lazy"></figure>
+        <div class="meta"><small>Longines</small><h3>Spirit Zulu Time 39 mm</h3><span class="ref">L38024606 · GMT</span>
+          <div class="row"><span class="price">$4,700</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l38024606.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="rado" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/60291196.jpg" alt="Rado Captain Cook High-Tech Ceramic Diver" loading="lazy"></figure>
+        <div class="meta"><small>Rado</small><h3>Captain Cook High-Tech Ceramic Diver</h3><span class="ref">R32144202</span>
+          <div class="row"><span class="price">$3,360</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/16405823.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="rado"><div class="core">
+        <figure><img src="assets/products/50348859.jpg" alt="Rado Captain Cook Automatic Bronze" loading="lazy"></figure>
+        <div class="meta"><small>Rado</small><h3>Captain Cook Automatic Bronze</h3><span class="ref">R32504407 · Burgundy</span>
+          <div class="row"><span class="price">$2,580</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/r32504407.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="rado" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/50390476.jpg" alt="Rado Centrix Automatic Diamonds" loading="lazy"></figure>
+        <div class="meta"><small>Rado</small><h3>Centrix Automatic Diamonds</h3><span class="ref">R30941702 · 38 mm</span>
+          <div class="row"><span class="price">$1,980</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/r30941702.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="hamilton"><div class="core">
+        <figure><img src="assets/products/77744998.jpg" alt="Hamilton Khaki Field Murph 38 mm" loading="lazy"></figure>
+        <div class="meta"><small>Hamilton</small><h3>Khaki Field Murph 38 mm</h3><span class="ref">H70405730 · Automatic</span>
+          <div class="row"><span class="price">$1,300</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/h70405730.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="hamilton" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/77745096.jpg" alt="Hamilton Jazzmaster Performer Chrono" loading="lazy"></figure>
+        <div class="meta"><small>Hamilton</small><h3>Jazzmaster Performer Chrono</h3><span class="ref">H36626710 · 42 mm</span>
+          <div class="row"><span class="price">$3,410</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/7630458803811.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="hamilton"><div class="core">
+        <figure><img src="assets/products/75984115.jpg" alt="Hamilton Khaki Navy Scuba Auto" loading="lazy"></figure>
+        <div class="meta"><small>Hamilton</small><h3>Khaki Navy Scuba Auto</h3><span class="ref">H82415330 · 40 mm</span>
+          <div class="row"><span class="price">$1,190</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/h82415330.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="tissot" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/66181410.jpg" alt="Tissot PRX Powermatic 80" loading="lazy"></figure>
+        <div class="meta"><small>Tissot</small><h3>PRX Powermatic 80</h3><span class="ref">T137.407.11.351.01 · 40 mm</span>
+          <div class="row"><span class="price">$995</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/t1374071135101.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="tissot"><div class="core">
+        <figure><img src="assets/products/77612723.jpg" alt="Tissot Seastar 2000 Professional" loading="lazy"></figure>
+        <div class="meta"><small>Tissot</small><h3>Seastar 2000 Professional</h3><span class="ref">T120.907.37.041.00 · 44 mm</span>
+          <div class="row"><span class="price">$1,350</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/t1209073704100.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="tissot" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/77612746.jpg" alt="Tissot Gentleman 40 mm" loading="lazy"></figure>
+        <div class="meta"><small>Tissot</small><h3>Gentleman 40 mm</h3><span class="ref">T127.410.11.041.00</span>
+          <div class="row"><span class="price">$595</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/t1274101104100.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="mido"><div class="core">
+        <figure><img src="assets/products/76520781.jpg" alt="Mido Ocean Star 200" loading="lazy"></figure>
+        <div class="meta"><small>Mido</small><h3>Ocean Star 200</h3><span class="ref">M026.930.11.051.00</span>
+          <div class="row"><span class="price">$1,190</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/m0269301105100.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="mido" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/75166143.jpg" alt="Mido Ocean Star GMT" loading="lazy"></figure>
+        <div class="meta"><small>Mido</small><h3>Ocean Star GMT</h3><span class="ref">M026.629.17.051.01</span>
+          <div class="row"><span class="price">$1,710</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/m0266291705101.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="mido"><div class="core">
+        <figure><img src="assets/products/74388475.jpg" alt="Mido Multifort 8 One Crown" loading="lazy"></figure>
+        <div class="meta"><small>Mido</small><h3>Multifort 8 One Crown</h3><span class="ref">M055.507.11.041.00</span>
+          <div class="row"><span class="price">$1,250</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/m0555071104100.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="seiko" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/42795638.jpg" alt="Seiko Prospex Alpinist" loading="lazy"></figure>
+        <div class="meta"><small>Seiko</small><h3>Prospex Alpinist</h3><span class="ref">SPB121J1</span>
+          <div class="row"><span class="price">$1,025</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/spb121j1.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="seiko"><div class="core">
+        <figure><img src="assets/products/77612501.jpg" alt="Seiko Presage Cocktail Emerald Mist" loading="lazy"></figure>
+        <div class="meta"><small>Seiko</small><h3>Presage Cocktail Emerald Mist</h3><span class="ref">HCB001J1</span>
+          <div class="row"><span class="price">$675</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/hcb001j1.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="seiko" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/63746036.jpg" alt="Seiko Prospex 1965 Revival Diver" loading="lazy"></figure>
+        <div class="meta"><small>Seiko</small><h3>Prospex 1965 Revival Diver</h3><span class="ref">SPB451J1 · 40 mm</span>
+          <div class="row"><span class="price">$1,750</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/spb451j1.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
       <article class="shell product reveal" data-brand="gshock"><div class="core">
-        <figure><img src="assets/products/73360878.jpg" alt="G-SHOCK GM2100YMG-9A, gold-tone metal bezel" loading="lazy"></figure>
+        <figure><img src="assets/products/77729407.jpg" alt="G-SHOCK GA-2100 Black" loading="lazy"></figure>
+        <div class="meta"><small>G-SHOCK</small><h3>GA-2100 Black</h3><span class="ref">GA2100-1A1</span>
+          <div class="row"><span class="price">$149</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/ga2100-1a1.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="gshock" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/73360878.jpg" alt="G-SHOCK GM-2100 Gold" loading="lazy"></figure>
         <div class="meta"><small>G-SHOCK</small><h3>GM-2100 Gold</h3><span class="ref">GM2100YMG-9A</span>
           <div class="row"><span class="price">$425</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/gm2100ymg-9a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
       </div></article>
-      <article class="shell product reveal" data-brand="longines" style="--dl:.08s"><div class="core">
-        <figure><img src="assets/products/59292268.jpg" alt="Longines HydroConquest GMT" loading="lazy"></figure>
-        <div class="meta"><small>Longines</small><h3>HydroConquest GMT</h3><span class="ref">L37904966</span>
-          <div class="row"><span class="price">$3,800</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l37904966.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
-      </div></article>
-      <article class="shell product reveal" data-brand="longines"><div class="core">
-        <figure><img src="assets/products/75883377.jpg" alt="Longines Spirit Zulu Time 39 mm" loading="lazy"></figure>
-        <div class="meta"><small>Longines</small><h3>Spirit Zulu Time 39 mm</h3><span class="ref">L38024606</span>
-          <div class="row"><span class="price">$4,700</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/l38024606.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
-      </div></article>
-      <article class="shell product reveal" data-brand="gshock" style="--dl:.08s"><div class="core">
-        <figure><img src="assets/products/66694048.jpg" alt="G-SHOCK GAB2100-1A, Tough Solar with Bluetooth" loading="lazy"></figure>
+      <article class="shell product reveal" data-brand="gshock"><div class="core">
+        <figure><img src="assets/products/66694048.jpg" alt="G-SHOCK GA-B2100 Solar" loading="lazy"></figure>
         <div class="meta"><small>G-SHOCK</small><h3>GA-B2100 Solar</h3><span class="ref">GAB2100-1A · Bluetooth</span>
           <div class="row"><span class="price">$229</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/gab2100-1a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
       </div></article>
-      <article class="shell product reveal" data-brand="gshock"><div class="core">
-        <figure><img src="assets/products/66693889.jpg" alt="G-SHOCK GA2100-4A" loading="lazy"></figure>
-        <div class="meta"><small>G-SHOCK</small><h3>GA-2100</h3><span class="ref">GA2100-4A</span>
-          <div class="row"><span class="price">$149</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/ga2100-4a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      <article class="shell product reveal" data-brand="casio" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/77729399.jpg" alt="Casio Edifice" loading="lazy"></figure>
+        <div class="meta"><small>Casio</small><h3>Edifice</h3><span class="ref">EFR-S108D-3AV</span>
+          <div class="row"><span class="price">$239.99</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/efr-s108d-3av.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="casio"><div class="core">
+        <figure><img src="assets/products/77729401.jpg" alt="Casio Vintage" loading="lazy"></figure>
+        <div class="meta"><small>Casio</small><h3>Vintage</h3><span class="ref">AQ-230A-2A</span>
+          <div class="row"><span class="price">$79.99</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/aq-230a-2a.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="bulova" style="--dl:.08s"><div class="core">
+        <figure><img src="assets/products/40126003.jpg" alt="Bulova 96C134" loading="lazy"></figure>
+        <div class="meta"><small>Bulova</small><h3>Crystal 96C134</h3><span class="ref">Crystal-set · steel · 41.5 mm</span>
+          <div class="row"><span class="price">$725</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/96c134.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
+      </div></article>
+      <article class="shell product reveal" data-brand="bulova"><div class="core">
+        <figure><img src="assets/products/40125976.jpg" alt="Bulova 98C126" loading="lazy"></figure>
+        <div class="meta"><small>Bulova</small><h3>Crystal 98C126</h3><span class="ref">Crystal-set · gold-tone</span>
+          <div class="row"><span class="price">$775</span><a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/98c126.html"><span>View</span> <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a></div></div>
       </div></article>
     </div>
     <div class="center reveal">
-      <a class="btn gold" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/brands/longines/"><span>All Longines</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
-      <a class="btn ghost" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/timepieces/casio-g-shock/"><span>All G-SHOCK &amp; Casio</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+      <a class="btn gold" id="brandLink" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/timepieces/"><span>Browse every timepiece</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
+      <a class="btn ghost" href="#book"><span>Book a private viewing</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
     </div>
-    <p class="note">Prices in CAD as listed on oceanfinejewellery.com. Free shipping on orders over $100.</p>
+    <p class="note">Prices in Canadian dollars, as listed at oceanfinejewellery.com. Free shipping on orders over $100.</p>
   </div>
 </section>
 
@@ -341,15 +525,15 @@ footer .brand{color:var(--cream)}
   <div class="wrap">
     <header class="head reveal">
       <span class="eyebrow">Services</span>
-      <h2>More than a counter, <em>a craft.</em></h2>
-      <p>Watches, diamonds and custom pieces, chosen and fitted by people who know them.</p>
+      <h2>What we <em>do here.</em></h2>
+      <p>Watches, diamonds and custom pieces, fitted and set by people who do this every day.</p>
     </header>
     <div class="bento">
-      <article class="light-shell big reveal"><div class="core"><span class="roman">I</span><h3>Authorized watch retailer</h3><p>Buy with full manufacturer warranty from eight brands:</p>
-        <div class="brands"><span>Longines</span><span>Rado</span><span>Hamilton</span><span>Tissot</span><span>Mido</span><span>Seiko</span><span>Casio</span><span>G-SHOCK</span></div></div></article>
-      <article class="light-shell reveal" style="--dl:.1s"><div class="core"><span class="roman">II</span><h3>Custom jewellery</h3><p>Bring an idea, a sketch or a family stone, and we'll design it with you.</p></div></article>
-      <article class="light-shell reveal"><div class="core"><span class="roman">III</span><h3>Lab-grown diamonds</h3><p>High-quality lab-grown stones in rings, pendants, earrings and bracelets.</p></div></article>
-      <article class="light-shell big reveal" style="--dl:.1s"><div class="core"><span class="roman">IV</span><h3>Straps, sizing &amp; fitting</h3><p>A wide range of watch straps to personalize your favourite timepiece, with bracelet sizing and strap changes done while you wait.</p></div></article>
+      <article class="light-shell big reveal"><div class="core"><span class="roman">I</span><h3>Authorized watch dealer</h3><p>Every watch leaves with the full manufacturer warranty. We carry:</p>
+        <div class="brands"><span>Longines</span><span>Rado</span><span>Hamilton</span><span>Tissot</span><span>Mido</span><span>Seiko</span><span>Casio</span><span>G-SHOCK</span><span>Bulova</span></div></div></article>
+      <article class="light-shell reveal" style="--dl:.1s"><div class="core"><span class="roman">II</span><h3>Custom jewellery</h3><p>Start with an idea, a sketch or a stone you already own. We draw it, price it and make it.</p></div></article>
+      <article class="light-shell reveal"><div class="core"><span class="roman">III</span><h3>Lab-grown diamonds</h3><p>Certified lab-grown stones set in rings, pendants, earrings and bracelets, at a fraction of the mined price.</p></div></article>
+      <article class="light-shell big reveal" style="--dl:.1s"><div class="core"><span class="roman">IV</span><h3>Straps, sizing &amp; fitting</h3><p>Links added or removed while you wait, and a wide choice of leather, rubber and steel straps when you want a different look.</p></div></article>
     </div>
   </div>
 </section>
@@ -358,20 +542,21 @@ footer .brand{color:var(--cream)}
   <div class="wrap">
     <header class="head reveal">
       <span class="eyebrow">Visit</span>
-      <h2>Come see them <em>in person.</em></h2>
+      <h2>Come in and <em>try it on.</em></h2>
+      <p>Photos only go so far with a watch. The boutique is on Fairview Street, a short walk from Burlington GO.</p>
     </header>
     <div class="locs">
       <article class="light-shell loc reveal"><div class="core">
         <small>The boutique</small><h3>Burlington</h3>
+        <span class="open" id="open" hidden></span>
         <p>3-4150 Fairview St, Burlington, ON</p>
-        <dl><dt>Phone</dt><dd><a href="tel:+19053333553">905-333-3553</a></dd><dt>Tue–Fri</dt><dd>11 am – 8 pm</dd><dt>Sat–Sun</dt><dd>11 am – 6 pm</dd><dt>Mon</dt><dd>Closed</dd></dl>
+        <dl id="hours"><dt>Phone</dt><dd><a href="tel:+19053333553">905-333-3553</a></dd><dt data-days="2345">Tue–Fri</dt><dd>11 am – 8 pm</dd><dt data-days="60">Sat–Sun</dt><dd>11 am – 6 pm</dd><dt data-days="1">Mon</dt><dd>Closed</dd></dl>
         <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Ocean+Fine+Jewellery+4150+Fairview+St+Burlington">Get directions <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
       </div></article>
-      <article class="light-shell loc reveal" style="--dl:.1s"><div class="core">
-        <small>Online</small><h3>Shop the store</h3>
-        <p>Browse the full catalogue at oceanfinejewellery.com, with free shipping on orders over $100.</p>
-        <a class="link" target="_blank" rel="noopener" href="https://www.oceanfinejewellery.com/">Visit the online store <i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></a>
-      </div></article>
+      <div class="light-shell map reveal" style="--dl:.1s"><div class="core">
+        <iframe title="Map showing Ocean Fine Jewellery at 4150 Fairview Street, Burlington" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Ocean+Fine+Jewellery,+4150+Fairview+St,+Burlington,+ON&amp;z=15&amp;output=embed"></iframe>
+      </div></div>
     </div>
   </div>
 </section>
@@ -380,18 +565,19 @@ footer .brand{color:var(--cream)}
   <div class="wrap book-grid">
     <header class="head reveal">
       <span class="eyebrow">Appointments</span>
-      <h2>Book a <em>private</em> visit.</h2>
-      <p>Tell us what you'd like to see and we'll have it ready when you arrive.</p>
+      <h2>Set aside <em>an hour.</em></h2>
+      <p>Tell us what you would like to see and it will be on the counter when you arrive. No charge, no obligation.</p>
       <ul class="contact-list"><li>3-4150 Fairview St, Burlington</li><li><a href="tel:+19053333553">905-333-3553</a></li></ul>
     </header>
-    <form class="shell reveal" id="bookForm">
+    <form class="shell reveal" id="bookForm" novalidate>
       <div class="core">
-        <label>Name<input name="name" required autocomplete="name"></label>
-        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Name<input name="name" required autocomplete="name"><small class="err">Please tell us your name.</small></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"><small class="err">That email address does not look right.</small></label>
         <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
-        <label>Preferred date<input name="date" type="date"></label>
+        <label>Preferred date<input name="date" type="date" id="date"><small class="err" id="dateErr">We are closed on Mondays. Pick another day.</small></label>
         <label class="full">Interested in<select name="interest"><option>Longines</option><option>G-SHOCK / Casio</option><option>Another watch brand</option><option>Custom jewellery</option><option>Lab-grown diamonds</option><option>Straps or sizing</option></select></label>
         <label class="full">Notes<textarea name="notes" placeholder="A reference number, a wrist size, a budget…"></textarea></label>
+        <p class="form-note">Open Tuesday to Friday 11 to 8, weekends 11 to 6.</p>
         <button class="btn gold" type="submit"><span>Request appointment</span><i><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></i></button>
       </div>
     </form>
@@ -401,9 +587,19 @@ footer .brand{color:var(--cream)}
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top">Ocean<span>Fine Jewellery</span></a>
-    <span>3-4150 Fairview St, Burlington, ON · 905-333-3553</span>
-    <span>Sample concept site</span>
+    <div class="cols">
+      <div>
+        <a class="brand" href="#top">Ocean<span>Fine Jewellery</span></a>
+        <p class="tag-line">Watches, custom jewellery and lab-grown diamonds in Burlington, Ontario. Authorized dealer for nine watch houses.</p>
+      </div>
+      <div><h4>Visit</h4><ul><li>3-4150 Fairview St</li><li>Burlington, ON</li><li><a href="tel:+19053333553">905-333-3553</a></li></ul></div>
+      <div><h4>Hours</h4><ul><li>Tue–Fri · 11 am – 8 pm</li><li>Sat–Sun · 11 am – 6 pm</li><li>Mon · Closed</li></ul></div>
+      <div><h4>Shop</h4><ul><li><a href="#shop">Watches</a></li><li><a href="#services">Services</a></li><li><a href="#book">Book a visit</a></li><li><a href="https://www.oceanfinejewellery.com/" target="_blank" rel="noopener">Online store</a></li></ul></div>
+    </div>
+    <div class="legal">
+    <span>© <span id="year"></span> Ocean Fine Jewellery. Sample concept site.</span>
+    <span>3D watch: <a href="https://sketchfab.com/3d-models/classic-watch-longines-presence-20643c80a95b424984a014ad79c6195f" target="_blank" rel="noopener">“Classic Watch Longines Presence”</a> by <a href="https://sketchfab.com/turboturbo" target="_blank" rel="noopener">TURBO TURBO</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> (recoloured, strap rebuilt)</span>
+    </div>
   </div>
 </footer>
 
@@ -418,18 +614,96 @@ const io = new IntersectionObserver(es => es.forEach(e => {
 $$('.reveal').forEach(n => io.observe(n));
 
 /* brand filter */
+const total = $$('.product').length;
+$('#count').textContent = `${total} watches`;
 $$('.filters button').forEach(b => b.addEventListener('click', () => {
   $$('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
-  $$('.product').forEach(p => p.hidden = b.dataset.f !== 'all' && p.dataset.brand !== b.dataset.f);
+  let shown = 0;
+  $$('.product').forEach(p => { p.hidden = b.dataset.f !== 'all' && p.dataset.brand !== b.dataset.f; if (!p.hidden) shown++; });
+  $('#count').textContent = b.dataset.f === 'all' ? `${total} watches` : `${shown} of ${total}`;
+  const link = $('#brandLink');                     // the button follows the chosen brand to its full range
+  link.href = b.dataset.url; link.querySelector('span').textContent = b.dataset.label;
 }));
 
-/* sample booking form */
-$('#bookForm').addEventListener('submit', e => {
+/* the Dive button: an eased ride through the sequence that pauses at each caption */
+(() => {
+  const dive = $('.dive'), stopBtn = $('#stopDive');
+  const stops = $$('.panel').slice(1).map(el => (+el.dataset.in + Math.min(1, +el.dataset.out)) / 2); // the hero is where we start
+  stops[stops.length - 1] = 1; // the last caption is read on the seabed, at 300 m
+  const yAt = p => dive.offsetTop + p * (dive.offsetHeight - innerHeight);
+  const ease = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2, easeOut = t => 1 - Math.pow(1 - t, 3);
+  const HOLD = 3200, SPEED = 9000; // ms per full dive; travel time scales with distance
+  let raf = 0, timer = 0;
+  const stop = () => {
+    if (!document.body.classList.contains('autodive')) return;
+    cancelAnimationFrame(raf); clearTimeout(timer);
+    document.body.classList.remove('autodive'); stopBtn.hidden = true;
+    removeEventListener('wheel', stop); removeEventListener('touchstart', stop); removeEventListener('keydown', stop);
+  };
+  const glide = (from, to, i) => {
+    const dur = Math.max(1600, Math.abs(to - from) * SPEED), t0 = performance.now(), ez = from < .01 ? easeOut : ease; // from the top: straight into the dive
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur);
+      scrollTo({ top: yAt(from + (to - from) * ez(k)), behavior: 'instant' });
+      if (k < 1) raf = requestAnimationFrame(step);
+      else if (i + 1 < stops.length) timer = setTimeout(() => glide(to, stops[i + 1], i + 1), HOLD);
+      else if (to <= 1) timer = setTimeout(() => glide(to, 1 + innerHeight / (dive.offsetHeight - innerHeight), i + 1), HOLD); // past the dive, onto the watches
+      else stop();
+    };
+    raf = requestAnimationFrame(step);
+  };
+  $('#dive').addEventListener('click', () => {
+    document.body.classList.add('autodive'); stopBtn.hidden = false;
+    const opts = { passive: true };
+    addEventListener('wheel', stop, opts); addEventListener('touchstart', stop, opts); addEventListener('keydown', stop);
+    const r = dive.getBoundingClientRect(), p0 = Math.max(0, -r.top / (r.height - innerHeight));
+    setTimeout(() => glide(p0, stops[0], 0), 150);
+  });
+  stopBtn.addEventListener('click', stop);
+})();
+
+/* nav: mobile menu + current section */
+const menuBtn = $('.menu-btn');
+const setMenu = open => { document.body.classList.toggle('menu-open', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
+menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+$$('.menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+const navLinks = $$('.nav nav a');
+const navSpy = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  navLinks.forEach(a => a.getAttribute('href') === '#' + e.target.id ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
+}), { rootMargin: '-40% 0px -55% 0px' });
+$$('main section[id]').forEach(sec => navSpy.observe(sec));
+
+/* opening hours, in the boutique's own time zone */
+const HOURS = { 0: [11, 18], 1: null, 2: [11, 20], 3: [11, 20], 4: [11, 20], 5: [11, 20], 6: [11, 18] };
+(() => {
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Toronto', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+  const get = t => parts.find(x => x.type === t).value;
+  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+  const now = +get('hour') % 24 + +get('minute') / 60, h = HOURS[day];
+  const fmt = x => (x > 12 ? x - 12 : x) + (x >= 12 ? ' pm' : ' am');
+  const open = h && now >= h[0] && now < h[1];
+  const el = $('#open');
+  el.hidden = false; el.classList.toggle('closed', !open);
+  el.textContent = open ? `Open now · closes ${fmt(h[1])}` : h && now < h[0] ? `Opens today at ${fmt(h[0])}` : day === 0 || day === 1 ? 'Closed · opens Tuesday 11 am' : `Closed · opens tomorrow ${fmt((HOURS[(day + 1) % 7] || [11])[0])}`;
+  $$('#hours dt[data-days]').forEach(dt => { if (dt.dataset.days.includes(day)) { dt.classList.add('today'); dt.nextElementSibling.classList.add('today'); } });
+})();
+$('#year').textContent = new Date().getFullYear();
+
+/* sample booking form: inline validation, no Mondays */
+const form = $('#bookForm'), date = $('#date');
+date.min = new Date().toISOString().slice(0, 10);
+date.addEventListener('input', () => date.setCustomValidity(new Date(date.value + 'T12:00').getDay() === 1 ? 'Closed Mondays' : ''));
+form.addEventListener('submit', e => {
   e.preventDefault();
-  const name = e.target.elements.name.value.replace(/[<>&"]/g, '');
-  e.target.querySelector('.core').innerHTML = `<p class="thanks">Thank you, ${name}. We'll be in touch to confirm your visit.</p>`;
+  form.classList.add('tried');
+  if (!form.checkValidity()) { form.querySelector(':invalid').focus(); return; }
+  const name = form.elements.name.value.replace(/[<>&"]/g, '');
+  form.querySelector('.core').innerHTML = `<p class="thanks">Thank you, ${name}. We will call or email within a day to confirm.</p>`;
 });
 </script>
+<script src="assets/models/presence.js"></script>
 <script type="module">
 // Ocean Fine Jewellery: scroll-driven 3D dive.
 // A procedural Longines HydroConquest falls into a GPU-simulated sea (heightfield wave equation
@@ -437,10 +711,12 @@ $('#bookForm').addEventListener('submit', e => {
 import * as THREE from 'three';
 import { GPUComputationRenderer } from 'three/addons/misc/GPUComputationRenderer.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const $ = s => document.querySelector(s);
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const ss = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
+const ss2 = (a, b, v) => { const t = clamp((v - a) / (b - a)); return t * t * t * (t * (t * 6 - 15) + 10); }; // smootherstep: zero acceleration at both ends
 const bump = (a, b, v) => Math.sin(Math.PI * clamp((v - a) / (b - a)));
 const lerp = (a, b, t) => a + (b - a) * t;
 const seg = (a, b, v) => clamp((v - a) / (b - a));
@@ -454,8 +730,8 @@ const mq = matchMedia('(max-width: 767px)');
 
 /* ---------------- layout presets (calibration knobs) ---------------- */
 const LAYOUT = {
-  desktop: { swing: 1.6, flutter: .16, scale: .74, wy0: 2.0, cy0: 1.0, ty0: 1.85, cz0: 8.6, czDeep: 7.2, look: .1 },
-  mobile:  { swing: .3,  flutter: .08, scale: .68, wy0: 2.15, cy0: 1.0, ty0: 3.25, cz0: 12.5, czDeep: 9.5, look: 1.25 }, // look: aim above the watch so it sits below the text
+  desktop: { swing: 1.4, flutter: .09, scale: .74, wy0: 2.0, cy0: 1.0, ty0: 1.85, cz0: 8.6, czDeep: 7.2, look: .1 },
+  mobile:  { swing: .3,  flutter: .05, scale: .68, wy0: 2.15, cy0: 1.0, ty0: 3.25, cz0: 12.5, czDeep: 9.5, look: 1.25 }, // look: aim above the watch so it sits below the text
 };
 const L = () => mq.matches ? LAYOUT.mobile : LAYOUT.desktop;
 const SEABED = -10.5, SIM = 128, BOUNDS = 16;
@@ -492,10 +768,10 @@ if (!renderer) {
     document.fonts.load('600 64px "Cormorant Garamond"'),
     document.fonts.load('600 32px "Plus Jakarta Sans"'),
   ]).catch(() => {});
-  start();
+  start().catch(e => console.error('Scene failed to start', e));
 }
 
-function start() {
+async function start() {
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
 
@@ -663,7 +939,7 @@ function start() {
         #include <opaque_fragment>`);
   };
   // Dense near the watch, sparse toward the horizon: remap a uniform grid with a power curve.
-  const segs = mq.matches ? 220 : 320;
+  const segs = mq.matches ? 180 : 256;
   const waterGeo = new THREE.PlaneGeometry(2, 2, segs, segs);
   const wp = waterGeo.attributes.position;
   for (let i = 0; i < wp.count; i++) {
@@ -919,7 +1195,7 @@ function start() {
     scene.add(pts);
     return { pts, geo, pos, alpha, size, mat, n, life: new Float32Array(n), vel: new Float32Array(n * 3), next: 0 };
   }
-  const bubbles = particles(260, '#DDF6FA', false);
+  const bubbles = particles(440, '#DDF6FA', false);
   const splash = particles(320, '#F4FBFC', true);
   const snow = particles(mq.matches ? 260 : 520, '#BFE3E6', true);
   for (let i = 0; i < snow.n; i++) {
@@ -935,7 +1211,7 @@ function start() {
   };
 
   /* ---------------- the watch ---------------- */
-  const W = buildWatch(renderer);
+  const W = await buildPresence();
   scene.add(W.root);
 
   /* ---------------- interaction ---------------- */
@@ -952,9 +1228,10 @@ function start() {
     }
   }, { passive: true });
 
+  const dpr = Math.min(devicePixelRatio, mq.matches ? 1.5 : 1.25); // fixed for the session: changing it mid-dive reallocates the canvas and flashes
   function resize() {
     const w = innerWidth, h = innerHeight;
-    renderer.setPixelRatio(Math.min(devicePixelRatio, mq.matches ? 1.5 : 1.75));
+    renderer.setPixelRatio(dpr);
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
@@ -969,62 +1246,66 @@ function start() {
   // Steady part of the watch's height: free fall in air, drag brakes the plunge, a near-constant sink, a soft landing.
   const sinkY = p => {
     const l = L();
-    if (p < .15) return lerp(l.wy0, -.4, Math.pow(seg(.05, .15, p), 2));
-    const u = clamp((p - .15) / .82), w = (u - .85) / .15;
-    const land = u < .85 ? u : .85 + .15 * (w - w * w / 2);
-    return -.4 - 2.2 * (1 - Math.exp(-25 * (p - .15))) - 6.05 * land; // ends at SEABED + 2.3
+    if (p < .07) return lerp(l.wy0, -1.6, Math.pow(seg(.01, .07, p), 2));
+    const u = clamp((p - .07) / .93), w = (u - .85) / .15;
+    const land = u < .85 ? u : .85 + .15 * (w - w * w / 2);   // 0 -> .925, easing out at the end
+    return -1.6 - 6.6 * land / .925;                            // depth reads linearly on the gauge; ends at SEABED + 2.3 (300 m)
   };
   // Like a plate dropped in a pool, the watch flutters: it glides side to side, banking into each glide,
   // rising slightly as it glides and dropping as it turns. Phase advances with scroll, so it's fully scrubbable.
-  const FL = 15;
-  const flutterMask = p => ss(.22, .32, p) * (1 - ss(.88, .97, p));
+  const FL = 9; // flutter cycles over the dive: fewer, longer glides read as drifting rather than wobbling
+  const flutterMask = p => ss(.1, .2, p) * (1 - ss(.88, .97, p));
   const lateral = p => {
     const l = L();
-    const path = l.swing * (1 - 2 * ss(.26, .44, p) + 2 * ss(.66, .84, p)); // right -> left -> right, slow glides
+    const path = l.swing * (1 - 2 * ss2(.35, .60, p) + 2 * ss2(.70, .95, p)); // each crossing takes a quarter of the dive and is complete before the next pause // right -> left -> right; each glide sits in the gap between captions, so the watch is settled opposite the text whenever a caption is up
     return path + l.flutter * Math.sin(p * FL) * flutterMask(p);
   };
 
   const clock = new THREE.Clock();
   let prevWy = null, simAcc = 0, first = true, watchImp = 0;
+  let dropT = -1, wasUnder = false; // dropT: the timed plunge, started by the first scroll; wasUnder: camera surface crossing
   const target = new THREE.Vector3(), fogCol = new THREE.Color();
   const lastPos = new THREE.Vector3(), lastVel = new THREE.Vector3(), vel = new THREE.Vector3(), feel = new THREE.Vector3(), invQ = new THREE.Quaternion();
   const rawAcc = new THREE.Vector3(), accSmooth = new THREE.Vector3();
-  let physicsPrimed = false, pw = 0, pwv = 0;
-  const smoothDamp = (x, to, v, time, dt) => { // Unity-style SmoothDamp: no overshoot, frame-rate independent
-    const w = 2 / time, k = w * dt, e = 1 / (1 + k + .48 * k * k + .235 * k * k * k);
-    const c = x - to, tmp = (v + w * c) * dt;
-    return [to + (c + tmp) * e, (v - w * tmp) * e];
-  };
+  let physicsPrimed = false, pw = 0, pwv = 0, wind = 0; // wind: extra minutes the hands turn while the Dive button holds the page still
 
   renderer.setAnimationLoop(() => {
     const dt = Math.min(clock.getDelta(), .1), t = clock.elapsedTime;
     const { p: goal, visible } = scrollProgress();
-    cur = reduce ? goal : cur + (goal - cur) * (1 - Math.exp(-dt / .14));
+    cur = reduce ? goal : cur + (goal - cur) * (1 - Math.exp(-dt / .2));
     if (Math.abs(goal - cur) < 1e-4) cur = goal;
-    updatePanels(cur);
     // The watch and camera follow scroll through a critically damped spring, so wheel notches become one glide.
-    [pw, pwv] = smoothDamp(pw, cur, pwv, .5, dt);
+    const W0 = 4.2, Z = .78; // ponytail: a plain second-order spring, slightly under-damped; retune W0 for snappier, Z toward 1 for no overshoot
+    pwv += (W0 * W0 * (cur - pw) - 2 * Z * W0 * pwv) * dt; pw += pwv * dt;
     const p = reduce ? cur : pw;
+    const riding = document.body.classList.contains('autodive');
+    if ((goal > .008 || riding) && dropT < 0) dropT = 0; else if (goal < .003 && !riding) dropT = -1; // raw scroll, not the spring: the first notch or the Dive click trips it at once; back at the top resets it
+    if (dropT >= 0) dropT += dt;
+    // pc: what the camera and captions follow. The plunge timer pulls it to .1 by itself, so the view goes under
+    // right behind the watch instead of waiting for the eased scroll to get there.
+    const pc = Math.max(p, .1 * ss(.15, .9, Math.max(dropT, 0)));
+    updatePanels(pc);
     if (!visible) return;
 
     const l = L();
     pointerSmooth.lerp(pointer, 1 - Math.exp(-dt / .25));
 
     // --- watch transform
-    const above = 1 - seg(.04, .08, p);
     const fm = flutterMask(p), ph = p * FL;
-    const baseY = sinkY(p);
-    const wy = baseY + .08 * Math.cos(ph) * fm + Math.sin(t * 1.1) * .06 * above + Math.sin(t * .7) * .04 * (1 - above);
-    const wx = lateral(p);
+    let baseY = sinkY(p);
+    if (dropT >= 0) { const f = Math.min(1, dropT / .55); baseY = Math.min(baseY, lerp(l.wy0, -1.6, f * f)); } // settles just under the surface; the scrubbed sink takes over once it passes this depth
+    const above = 1 - ss(.3, -.3, baseY);
+    const wy = baseY + .08 * Math.cos(ph) * fm + Math.sin(t * 1.1) * .06 * above + (Math.sin(t * .7) * .09 + Math.sin(t * .23) * .05) * (1 - above);
+    const wx = lateral(p) + (Math.sin(t * .41 + 2) * .07 + Math.sin(t * .17) * .04) * (1 - above);
     const vx = (lateral(p + 1e-3) - lateral(p - 1e-3)) / 2e-3;          // sideways speed drives the bank
     const bank = clamp(vx / 40, -1, 1) * .35;
-    const ryAbove = -.55 + .9 * bump(.05, .32, p);                        // spins as it hits the water
+    const ryAbove = -.55 + .9 * bump(.02, .3, p);                        // spins as it hits the water
     const ryUnder = -.35 * clamp(wx / 1.6, -1, 1) + .16 * Math.sin(ph * .6 + .6) * fm; // face turns toward the caption side
     W.root.position.set(wx, wy, 0);
     W.root.rotation.set(
-      -.12 - .3 * bump(.08, .42, p) + .1 * Math.sin(ph + 1.3) * fm + Math.sin(t * .8) * .03 - pointerSmooth.y * .12,
+      -.12 - .3 * bump(.03, .4, p) + .1 * Math.sin(ph + 1.3) * fm + Math.sin(t * .8) * .03 - pointerSmooth.y * .12,
       lerp(ryAbove, ryUnder, ss(.2, .32, p)) + Math.sin(t * .6) * .05 + pointerSmooth.x * .25,
-      .35 * bump(.05, .4, p) - bank + Math.sin(t * .5) * .02,
+      .35 * bump(.02, .38, p) - bank + Math.sin(t * .5) * .02,
     );
 
     // --- bracelet physics: what the links feel in the watch's own frame = gravity - the watch's acceleration
@@ -1041,7 +1322,8 @@ function start() {
     lastPos.copy(W.root.position); lastVel.copy(vel);
 
     // --- hands wind with scroll, seconds sweep in real time, bezel turns counter-clockwise
-    const minDeg = 60 + p * 360 * 8;
+    if (riding) wind += dt * 140; // ~23 minutes of dial time per second while riding
+    const minDeg = 60 + p * 360 * 8 + wind;
     W.minute.rotation.z = -THREE.MathUtils.degToRad(minDeg);
     W.hour.rotation.z = -THREE.MathUtils.degToRad(305 + (minDeg - 60) / 12);
     W.second.rotation.z = -((t * 6 + 200) % 360) * Math.PI / 180;
@@ -1049,14 +1331,18 @@ function start() {
 
     // --- camera follows the fall, then the dive
     // the camera tracks the steady sink (not the flutter, so the wobble reads on screen) and drifts a little with the watch
-    const cy = lerp(l.cy0, baseY + .15 + l.look, ss(.12, .3, p));
-    const cx = wx * .15 * ss(.2, .3, p);
-    camera.position.set(cx, cy, lerp(l.cz0, l.czDeep, ss(.2, .45, p)));
-    target.set(cx, lerp(l.ty0, baseY + l.look, ss(.06, .24, p)), 0);
+    const cy = lerp(l.cy0, baseY + .15 + l.look, ss(.02, .10, pc));
+    const cx = wx * .15 * ss(.08, .2, pc);
+    camera.position.set(cx, cy, lerp(l.cz0, l.czDeep, ss(.1, .4, pc)));
+    target.set(cx, lerp(l.ty0, baseY + l.look, ss(.02, .12, pc)), 0);
     camera.lookAt(target);
 
     // --- above / below water
     const under = camera.position.y < 0;
+    if (under && !wasUnder) for (let i = 0; i < 150; i++)   // crossing the waterline: bubbles stream up across the view
+      emit(bubbles, camera.position.x + (Math.random() - .5) * 8, cy - .3 - Math.random() * 4, camera.position.z - 1.5 - Math.random() * 4.5,
+        0, .5 + Math.random() * 1.3, 0, .03 + Math.random() * .1);
+    wasUnder = under;
     const depth = clamp(-cy / (-SEABED - 2));
     sky.visible = !under;
     sky.position.copy(camera.position);
@@ -1181,258 +1467,120 @@ function start() {
 }
 
 /* =====================================================================
-   Procedural Longines HydroConquest (blue, 42 mm, steel bracelet).
-   Units: case radius = 1. Dial faces +Z, 12 o'clock is +Y.
+   Longines Présence: "Classic Watch Longines Presence" by TURBO TURBO (CC BY 4.0), embedded from
+   assets/models/presence.js. Changes: gold recoloured to steel, hands re-pivoted, and the two leather
+   straps rebuilt as flexible strips buckled into a loop (the originals are flat, coarse planes).
+   Our frame: case radius = 1, dial faces +Z, 12 o'clock +Y, crown (3 o'clock) +X.
    ===================================================================== */
-function buildWatch(renderer) {
-  const root = new THREE.Group();
-  const aniso = renderer.capabilities.getMaxAnisotropy();
-  const steel = new THREE.MeshPhysicalMaterial({ color: '#F0F2F5', metalness: 1, roughness: .1, side: THREE.DoubleSide });
-  const brushed = new THREE.MeshPhysicalMaterial({ color: '#DADDE1', metalness: 1, roughness: .26 });
-  const lume = new THREE.MeshStandardMaterial({ color: '#F1F4EE', roughness: .45, emissive: '#7CFFD4', emissiveIntensity: 0 });
-  const add = (geo, mat, x = 0, y = 0, z = 0, parent = root) => {
-    const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); parent.add(m); return m;
-  };
-  const gear = (n, r1, r2, hole) => {
-    const s = new THREE.Shape();
-    for (let i = 0; i <= n * 2; i++) {
-      const a = i / (n * 2) * Math.PI * 2, r = i % 2 ? r1 : r2;
-      i ? s.lineTo(Math.cos(a) * r, Math.sin(a) * r) : s.moveTo(Math.cos(a) * r, Math.sin(a) * r);
-    }
-    if (hole) { const h = new THREE.Path(); h.absarc(0, 0, hole, 0, Math.PI * 2, true); s.holes.push(h); }
-    return s;
-  };
-  const lathe = pts => new THREE.LatheGeometry(pts.map(([r, z]) => new THREE.Vector2(r, z)), 128).rotateX(Math.PI / 2);
+async function buildPresence() {
+  const buf = Uint8Array.from(atob(window.PRESENCE_GLB), c => c.charCodeAt(0)).buffer;
+  const gltf = await new GLTFLoader().parseAsync(buf, '');
+  const root = new THREE.Group(), frame = new THREE.Group();
+  frame.rotation.y = -Math.PI / 2;            // the file's dial faces +X with the crown toward -Z
+  frame.scale.setScalar(1 / .0145);           // 14.5 mm case radius -> 1
+  frame.add(gltf.scene); root.add(frame);
+  root.updateMatrixWorld(true);
+  const find = n => gltf.scene.getObjectByName(n);
 
-  // case: one machined piece (round middle, tapered lugs, crown-guard shoulder) with a polished bevel,
-  // lugs bent down toward the wrist, and a domed screw-down caseback
-  const D = THREE.MathUtils.degToRad, R0 = .97;
-  const cs = new THREE.Shape();
-  cs.absarc(0, 0, R0, D(-40), D(-16), false);
-  cs.absarc(0, 0, 1.04, D(-13), D(13), false);
-  cs.absarc(0, 0, R0, D(16), D(40), false);
-  cs.quadraticCurveTo(.72, .95, .62, 1.21); cs.lineTo(.41, 1.21); cs.lineTo(.41, .879);
-  cs.absarc(0, 0, R0, D(65), D(115), false);
-  cs.lineTo(-.41, 1.21); cs.lineTo(-.62, 1.21); cs.quadraticCurveTo(-.72, .95, -.743, .623);
-  cs.absarc(0, 0, R0, D(140), D(220), false);
-  cs.quadraticCurveTo(-.72, -.95, -.62, -1.21); cs.lineTo(-.41, -1.21); cs.lineTo(-.41, -.879);
-  cs.absarc(0, 0, R0, D(245), D(295), false);
-  cs.lineTo(.41, -1.21); cs.lineTo(.62, -1.21); cs.quadraticCurveTo(.72, -.95, .743, -.623);
-  const aperture = new THREE.Path(); aperture.absarc(0, 0, .8, 0, Math.PI * 2, true); cs.holes.push(aperture);
-  const caseGeo = new THREE.ExtrudeGeometry(cs, { depth: .2, bevelEnabled: true, bevelThickness: .04, bevelSize: .03, bevelSegments: 4, curveSegments: 48 }).translate(0, 0, -.1);
-  const cp = caseGeo.attributes.position;
-  for (let i = 0; i < cp.count; i++) { // bend the lugs (original normals kept: the bend is gentle)
-    const ay = Math.abs(cp.getY(i));
-    if (ay > .9) cp.setZ(i, cp.getZ(i) - Math.pow(ay - .9, 1.6) * 1.1);
-  }
-  add(caseGeo, steel);
-  add(lathe([[0, -.2], [.55, -.195], [.8, -.17], [.9, -.14]]), brushed);
-  add(new THREE.ExtrudeGeometry(gear(26, .125, .14), { depth: .15, bevelEnabled: true, bevelThickness: .015, bevelSize: .012, bevelSegments: 2 }).rotateY(Math.PI / 2), steel, 1.04, 0, 0);
-  add(new THREE.CylinderGeometry(.07, .07, .08, 24).rotateZ(Math.PI / 2), steel, 1.03, 0, 0); // crown tube
-
-  // rotating bezel: coin-edge steel ring + blue ceramic insert
-  const bezel = new THREE.Group(); bezel.position.z = .152; root.add(bezel);
-  add(new THREE.ExtrudeGeometry(gear(120, 1.012, 1.03, .82), { depth: .06, bevelEnabled: true, bevelThickness: .012, bevelSize: .01, bevelSegments: 2, curveSegments: 96 }), steel, 0, 0, 0, bezel);
-  const insertTex = canvasTex(bezelCanvas(), aniso);
-  add(new THREE.RingGeometry(.83, 1.0, 128, 1), new THREE.MeshPhysicalMaterial({ map: insertTex, roughness: .2, clearcoat: 1, clearcoatRoughness: .04 }), 0, 0, .074, bezel);
-
-  // flange, dial, crystal
-  add(lathe([[.76, .095], [.81, .215]]), new THREE.MeshStandardMaterial({ color: '#1A2F6B', roughness: .55, side: THREE.DoubleSide }));
-  add(new THREE.CircleGeometry(.765, 128), new THREE.MeshPhysicalMaterial({ map: canvasTex(dialCanvas(), aniso), roughness: .36, metalness: .35, clearcoat: .5, clearcoatRoughness: .2 }), 0, 0, .095);
-  const crystal = add(new THREE.CylinderGeometry(.81, .81, .03, 96).rotateX(Math.PI / 2), new THREE.MeshPhysicalMaterial({
-    color: '#FFFFFF', roughness: 0, metalness: 0, transparent: true, opacity: .14, clearcoat: 1, envMapIntensity: 2.5, depthWrite: false,
-  }), 0, 0, .205);
-  crystal.renderOrder = 1;
-
-  // applied indices: inverted triangle at 12, dots at 6 and 9, date window at 3, batons elsewhere
-  const baton = new RoundedBoxGeometry(.07, .17, .03, 2, .012), batonLume = new THREE.BoxGeometry(.04, .14, .012);
-  const dot = new THREE.CylinderGeometry(.06, .06, .03, 32).rotateX(Math.PI / 2), dotLume = new THREE.CylinderGeometry(.045, .045, .012, 32).rotateX(Math.PI / 2);
-  const tri = s => new THREE.ExtrudeGeometry(new THREE.Shape([new THREE.Vector2(-.085 * s, .09 * s), new THREE.Vector2(.085 * s, .09 * s), new THREE.Vector2(0, -.1 * s)]), { depth: .015 * s + .01, bevelEnabled: false });
-  for (let h = 0; h < 12; h++) {
-    if (h === 3) continue;
-    const a = h / 12 * Math.PI * 2, r = h === 0 ? .56 : .6;
-    const g = new THREE.Group(); g.position.set(Math.sin(a) * r, Math.cos(a) * r, .095); g.rotation.z = -a; root.add(g);
-    if (h === 0) { add(tri(1), steel, 0, 0, 0, g); add(tri(.7), lume, 0, .005, .012, g); }
-    else if (h === 6 || h === 9) { add(dot, steel, 0, 0, .015, g); add(dotLume, lume, 0, 0, .03, g); }
-    else { add(baton, steel, 0, 0, .015, g); add(batonLume, lume, 0, 0, .03, g); }
-  }
-
-  // hands (pivot at centre, pointing +Y)
-  const handShape = pts => new THREE.Shape(pts.map(([x, y]) => new THREE.Vector2(x, y)));
-  const flat = (shape, d) => new THREE.ExtrudeGeometry(shape, { depth: d, bevelEnabled: false });
-  const sword = (w, len, tail) => [[-w * .7, -tail], [-w, .05], [-w * .8, len * .85], [0, len], [w * .8, len * .85], [w, .05], [w * .7, -tail]];
-  const scalePts = (pts, sx, sy, oy) => pts.map(([x, y]) => [x * sx, y * sy + oy]);
-  const hour = new THREE.Group(), minute = new THREE.Group(), second = new THREE.Group();
-  hour.position.z = .13; minute.position.z = .148; second.position.z = .166;
-  root.add(hour, minute, second);
-  const hp = sword(.055, .42, .1), mp = sword(.04, .66, .13);
-  add(flat(handShape(hp), .012), steel, 0, 0, 0, hour);
-  add(flat(handShape(scalePts(hp.slice(1, 6), .5, .78, .05)), .004), lume, 0, 0, .012, hour);
-  add(flat(handShape(mp), .012), steel, 0, 0, 0, minute);
-  add(flat(handShape(scalePts(mp.slice(1, 6), .45, .86, .05)), .004), lume, 0, 0, .012, minute);
-  add(new THREE.BoxGeometry(.014, .9, .008), steel, 0, .26, 0, second);
-  add(new THREE.TorusGeometry(.045, .012, 10, 36), steel, 0, .48, 0, second);
-  add(new THREE.CircleGeometry(.036, 32), lume, 0, .48, .002, second);
-  add(new THREE.CylinderGeometry(.035, .035, .02, 24).rotateX(Math.PI / 2), steel, 0, -.15, 0, second);
-  add(new THREE.CylinderGeometry(.04, .04, .03, 32).rotateX(Math.PI / 2), steel, 0, 0, .18);
-
-  // ---------------- articulated bracelet ----------------
-  // A closed loop, as a watch lies when it's dropped: end link, 7 three-piece links, folding clasp, 7 links, end link.
-  // Every joint is a pin hinge, so the loop lives in the watch's local YZ plane. Its relaxed shape is solved once at
-  // build time: links keep their length, only curl inward (like a real bracelet), and stay clear of the case.
-  const LINK = .3, NSIDE = 8, CLASP = 1.1;
-  const lens = [...Array(NSIDE).fill(LINK), CLASP, ...Array(NSIDE).fill(LINK)];
-  const NJ = lens.length + 1, last = NJ - 1;
-  const PIN_TOP = new THREE.Vector2(1.08, -.08), PIN_BOT = new THREE.Vector2(-1.08, -.08); // (y, z)
-  const J = [];
-  { // start on the circle through both lug pins whose rear arc matches the bracelet length
-    const total = lens.reduce((a, b) => a + b, 0);
-    let lo = 1.09, hi = 4, R = 2;
-    for (let i = 0; i < 40; i++) { R = (lo + hi) / 2; (R * (Math.PI + 2 * Math.acos(1.08 / R)) > total) ? hi = R : lo = R; }
-    const zc = -.08 - Math.sqrt(R * R - 1.08 * 1.08), phi0 = Math.acos(1.08 / R);
-    let sAcc = 0;
-    for (let i = 0; i < NJ; i++) {
-      const a = phi0 - sAcc / R;
-      J.push(new THREE.Vector2(R * Math.cos(a), zc + R * Math.sin(a)));
-      sAcc += lens[i] || 0;
-    }
-  }
-  const IN = -.62, OUT = .08;                         // per-joint bend limits (radians): curl in, barely out
-  const fakeTop = new THREE.Vector2(PIN_TOP.x - .3, PIN_TOP.y), fakeBot = new THREE.Vector2(PIN_BOT.x + .3, PIN_BOT.y);
-  const va = new THREE.Vector2(), vb = new THREE.Vector2(), vd = new THREE.Vector2();
-  const rot = (v, t) => v.set(v.x * Math.cos(t) - v.y * Math.sin(t), v.x * Math.sin(t) + v.y * Math.cos(t));
-  function bend(pPrev, p, pNext, wPrev, wNext, lo, hi) {
-    va.subVectors(p, pPrev); vb.subVectors(pNext, p);
-    const phi = Math.atan2(va.x * vb.y - va.y * vb.x, va.dot(vb));
-    const e = clamp(phi > hi ? phi - hi : phi < lo ? phi - lo : 0, -.25, .25); // small corrections keep Verlet stable
-    if (!e || wPrev + wNext === 0) return;
-    const sa = wPrev / (wPrev + wNext), sb = wNext / (wPrev + wNext);
-    if (wPrev) pPrev.copy(p).sub(rot(va, e * sa));
-    if (wNext) pNext.copy(p).add(rot(vb, -e * sb));
-  }
-  function solve() {
-    J[0].copy(PIN_TOP); J[last].copy(PIN_BOT);
-    for (let i = 0; i < last; i++) {                  // keep every link its own length
-      const a = J[i], b = J[i + 1], wa = i === 0 ? 0 : 1, wb = i + 1 === last ? 0 : 1;
-      vd.subVectors(b, a); const d = vd.length() || 1e-6, k = (d - lens[i]) / d / (wa + wb);
-      a.addScaledVector(vd, k * wa); b.addScaledVector(vd, -k * wb);
-    }
-    bend(fakeTop, J[0], J[1], 0, 1, -1.0, .15);       // end links pivot on the lug pins
-    for (let i = 1; i < last; i++) bend(J[i - 1], J[i], J[i + 1], i - 1 === 0 ? 0 : 1, i + 1 === last ? 0 : 1, IN, OUT);
-    bend(J[last - 1], J[last], fakeBot, 1, 0, -1.0, .15);
-    for (let i = 1; i < last; i++) {                  // stay behind the case
-      if (Math.abs(J[i].x) < 1.02 && J[i].y > -.26) J[i].y = -.26;
-    }
-  }
-  for (let i = 0; i < 200; i++) solve();
-  const rest = J.map(v => v.clone());
-
-  // The bracelet is drawn as two continuous bands fitted through the simulated joints (as a real bracelet reads):
-  // a brushed outer band and a raised polished centre strip, with link gaps in their textures (centre staggered by half a link).
-  const linkTex = (base, light, groove, stagger, brushed) => {
-    const c = document.createElement('canvas'); c.width = c.height = 128;
-    const g = c.getContext('2d');
-    const grd = g.createLinearGradient(0, 0, 128, 0);
-    grd.addColorStop(0, base); grd.addColorStop(.5, light); grd.addColorStop(1, base);
-    g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
-    if (brushed) for (let i = 0; i < 220; i++) {         // fine brushing across the link
-      g.fillStyle = `rgba(${Math.random() < .5 ? '255,255,255' : '40,44,50'},${Math.random() * .08})`;
-      g.fillRect(0, Math.random() * 128, 128, 1);
-    }
-    const y = stagger ? 62 : 0;
-    g.fillStyle = groove; g.fillRect(0, y, 128, 4);       // the gap between links
-    g.fillStyle = 'rgba(255,255,255,.35)'; g.fillRect(0, y + 4, 128, 1);
-    const t = canvasTex(c, aniso); t.wrapS = t.wrapT = THREE.RepeatWrapping;
-    return t;
-  };
-  const bandMat = new THREE.MeshPhysicalMaterial({ color: '#E3E6EA', metalness: 1, roughness: .3, side: THREE.DoubleSide, map: linkTex('#C9CDD2', '#E9EBEE', '#2E3338', false, true) });
-  const stripMat = new THREE.MeshPhysicalMaterial({ color: '#F4F6F8', metalness: 1, roughness: .08, side: THREE.DoubleSide, map: linkTex('#DADDE1', '#FFFFFF', '#30353B', true, false) });
-  const curves = [0, 1].map(() => new THREE.CatmullRomCurve3(Array.from({ length: NSIDE + 1 }, () => new THREE.Vector3()), false, 'centripetal'));
-  const superellipse = (n, hw, ht) => Array.from({ length: n + 1 }, (_, k) => {
-    const a = k / n * Math.PI * 2, c = Math.cos(a), sn = Math.sin(a);
-    return [Math.sign(c) * Math.pow(Math.abs(c), .45) * hw, Math.sign(sn) * Math.pow(Math.abs(sn), .45) * ht, k / n];
+  // materials: steel instead of gold (as the boutique stocks it), simple crystal, dark printed logo
+  const steel = new THREE.MeshPhysicalMaterial({ color: '#ECEEF1', metalness: 1, roughness: .12, clearcoat: .3 });
+  const glass = new THREE.MeshPhysicalMaterial({ color: '#FFFFFF', roughness: 0, transparent: true, opacity: .12, clearcoat: 1, envMapIntensity: 2.5, depthWrite: false });
+  let leather;
+  gltf.scene.traverse(o => {
+    if (!o.isMesh) return;
+    const n = o.material.name;
+    if (n === 'Gold' || n === 'Crown' || n === 'spring_bar') o.material = steel;
+    else if (n === 'Crystal') { o.material = glass; o.renderOrder = 1; }
+    else if (n === 'Logo') o.material = new THREE.MeshStandardMaterial({ color: '#2A2C30', metalness: .4, roughness: .4 });
+    else if (n === 'Leather') leather = o.material;
   });
-  function band(mat, prof, zOff, w0, w1) {
-    const RINGS = NSIDE * 8 + 1, P = prof.length;
-    const geo = new THREE.BufferGeometry();
-    const pos = new Float32Array(RINGS * P * 3), uv = new Float32Array(RINGS * P * 2), index = [];
-    for (let r = 0; r < RINGS; r++) for (let k = 0; k < P; k++) {
-      uv[(r * P + k) * 2] = prof[k][2]; uv[(r * P + k) * 2 + 1] = r / (RINGS - 1) * NSIDE;
-      if (r < RINGS - 1 && k < P - 1) { const a = r * P + k, b = a + P; index.push(a, b, a + 1, b, b + 1, a + 1); }
+
+  // hands: an outer pivot the scroll turns, an inner one that cancels the pose the model was saved in
+  const hand = name => {
+    const h = find(name), outer = new THREE.Group(), inner = new THREE.Group();
+    const hub = h.getWorldPosition(new THREE.Vector3());
+    outer.position.copy(hub); root.add(outer); outer.add(inner); root.updateMatrixWorld(true);
+    inner.attach(h);
+    const c = new THREE.Box3().setFromObject(h).getCenter(new THREE.Vector3());
+    inner.rotation.z = Math.atan2(c.x - hub.x, c.y - hub.y); // rest angle, clockwise from 12
+    return outer;
+  };
+  const hour = hand('Circle005_4'), minute = hand('Circle004_5'), second = hand('Circle003_6');
+
+  // ---------------- leather strap: buckled loop with sway + ripple flex ----------------
+  const shortStrap = find('Plane001_1'), longStrap = find('Plane_2'), buckle = find('Cube002_0');
+  root.attach(buckle);                        // measure the strap without its buckle
+  const boxOf = o => new THREE.Box3().setFromObject(o);
+  const sb = boxOf(shortStrap), lb = boxOf(longStrap);
+  const pinY = sb.min.y, pinZ = (sb.min.z + sb.max.z) / 2; // the strap starts at the spring bar
+  const L1 = sb.max.y - sb.min.y, L2 = lb.max.y - lb.min.y, W0 = sb.max.x - sb.min.x;
+  // detach the real buckle so it can ride the end of the rebuilt short strap
+  const restEnd = new THREE.Vector3(0, sb.max.y, pinZ);
+  const buckleAnchor = new THREE.Group(), buckleRest = new THREE.Group();
+  buckleAnchor.matrixAutoUpdate = false; root.add(buckleAnchor); buckleAnchor.add(buckleRest);
+  buckleRest.position.copy(restEnd).negate(); root.updateMatrixWorld(true);
+  buckleRest.attach(buckle);
+  shortStrap.visible = longStrap.visible = false;
+
+  // the loop: a circle through both lug pins; the long strap runs past the buckle and tucks inside
+  const ARC = L1 + .72 * L2;
+  let lo = pinY + .01, hi = 6, R = 2;
+  for (let i = 0; i < 40; i++) { R = (lo + hi) / 2; (R * (Math.PI + 2 * Math.acos(pinY / R)) > ARC) ? hi = R : lo = R; }
+  const zc = pinZ - Math.sqrt(R * R - pinY * pinY), phi0 = Math.acos(pinY / R);
+  const A = new THREE.Vector2(), Av = new THREE.Vector2(), B = new THREE.Vector2(), Bv = new THREE.Vector2(), lastF = new THREE.Vector2();
+  const at = (sg, out) => { // centreline point at arc length sg from the 12 o'clock pin, flexed by the two modes
+    const a = phi0 - sg / R, u = sg / ARC, sw = Math.sin(Math.PI * u), rp = Math.sin(2 * Math.PI * u);
+    return out.set(R * Math.cos(a) + A.x * sw + B.x * rp, zc + R * Math.sin(a) + A.y * sw + B.y * rp);
+  };
+  const leatherMat = leather.clone();
+  for (const k of ['map', 'normalMap', 'roughnessMap', 'metalnessMap']) if (leatherMat[k]) { leatherMat[k] = leatherMat[k].clone(); leatherMat[k].wrapS = leatherMat[k].wrapT = THREE.RepeatWrapping; leatherMat[k].needsUpdate = true; }
+  leatherMat.side = THREE.DoubleSide;
+  const prof = Array.from({ length: 25 }, (_, k) => { // flat rounded section: width x thickness
+    const a = k / 24 * Math.PI * 2, c = Math.cos(a), sn = Math.sin(a);
+    return [Math.sign(c) * Math.pow(Math.abs(c), .35) * .5, Math.sign(sn) * Math.pow(Math.abs(sn), .35) * .045, k / 24];
+  });
+  function strap(len, rings, sgAt, widthAt, insetAt) {
+    const P = prof.length, geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(rings * P * 3), uv = new Float32Array(rings * P * 2), index = [];
+    for (let r = 0; r < rings; r++) for (let k = 0; k < P; k++) {
+      uv[(r * P + k) * 2] = prof[k][2]; uv[(r * P + k) * 2 + 1] = r / (rings - 1) * len / W0;
+      if (r < rings - 1 && k < P - 1) { const a = r * P + k, b = a + P; index.push(a, b, a + 1, b, b + 1, a + 1); }
     }
     geo.setIndex(index);
     geo.setAttribute('position', new THREE.BufferAttribute(pos, 3).setUsage(THREE.DynamicDrawUsage));
     geo.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
-    const mesh = new THREE.Mesh(geo, mat); mesh.frustumCulled = false; root.add(mesh);
-    const pt = new THREE.Vector3(), tg = new THREE.Vector3();
-    return (curve, pinAtStart) => {
-      for (let r = 0; r < RINGS; r++) {
-        const u = r / (RINGS - 1);
-        curve.getPointAt(u, pt); curve.getTangentAt(u, tg);
-        const w = lerp(w0, w1, pinAtStart ? u : 1 - u);         // taper from the lugs toward the clasp
+    const mesh = new THREE.Mesh(geo, leatherMat); mesh.frustumCulled = false; root.add(mesh);
+    const c = new THREE.Vector2(), c2 = new THREE.Vector2();
+    return () => {
+      for (let r = 0; r < rings; r++) {
+        const s1 = r / (rings - 1) * len, sg = sgAt(s1);
+        at(sg, c); at(sg + .01, c2); c2.sub(c).normalize();     // tangent in the direction of increasing sg
+        const ny = -c2.y, nz = c2.x, w = widthAt(s1), inset = insetAt(sg); // outward normal
         for (let k = 0; k < P; k++) {
-          const x = prof[k][0] * w, z = prof[k][1] + zOff, o = (r * P + k) * 3;
-          pos[o] = x; pos[o + 1] = pt.y - tg.z * z; pos[o + 2] = pt.z + tg.y * z;
+          const x = prof[k][0] * w, n = prof[k][1] - inset, o = (r * P + k) * 3;
+          pos[o] = x; pos[o + 1] = c.x + ny * n; pos[o + 2] = c.y + nz * n;
         }
       }
       geo.attributes.position.needsUpdate = true;
       geo.computeVertexNormals();
     };
   }
-  const outerProf = superellipse(28, .5, .05), stripProf = superellipse(20, .5, .028);
-  const bands = [0, 1].map(() => [band(bandMat, outerProf, 0, .76, .64), band(stripMat, stripProf, .042, .19, .17)]);
-
-  const clasp = new THREE.Group(); clasp.matrixAutoUpdate = false; root.add(clasp);
-  add(new RoundedBoxGeometry(.62, 1.06, .1, 4, .04), brushed, 0, 0, -.01, clasp);           // folding blade
-  add(new RoundedBoxGeometry(.52, .9, .05, 4, .022), steel, 0, .02, .055, clasp);           // polished cover
-  add(new THREE.BoxGeometry(.44, .004, .01), new THREE.MeshStandardMaterial({ color: '#6F757C', metalness: 1, roughness: .4 }), 0, -.28, .081, clasp); // fold line
-  const pusher = new THREE.CylinderGeometry(.045, .05, .07, 20).rotateZ(Math.PI / 2);
-  add(pusher, steel, .33, .3, .02, clasp); add(pusher, steel, -.33, .3, .02, clasp);
-  const barrel = new THREE.CylinderGeometry(.045, .045, .6, 20).rotateZ(Math.PI / 2);
-  add(barrel, steel, 0, .55, -.01, clasp); add(barrel, steel, 0, -.55, -.01, clasp);
-  const eng = document.createElement('canvas'); eng.width = 512; eng.height = 128;
-  { const g = eng.getContext('2d'); g.fillStyle = '#fff'; g.textAlign = 'center'; g.textBaseline = 'middle';
-    if ('letterSpacing' in g) g.letterSpacing = '10px';
-    g.font = '600 70px "Cormorant Garamond", Georgia, serif'; g.fillText('LONGINES', 256, 66); }
-  const engraving = add(new THREE.PlaneGeometry(.42, .105), new THREE.MeshStandardMaterial({
-    color: '#4A5058', metalness: 1, roughness: .5, alphaMap: canvasTex(eng, aniso), transparent: true, depthWrite: false,
-  }), 0, .08, .0815, clasp);
-  engraving.rotation.z = -Math.PI / 2;
-
-  // Place an object along the chain: X = pin axis, Y = along the bracelet, Z = outward face.
-  const m4 = new THREE.Matrix4();
+  const drawShort = strap(L1, 36, s1 => s1, () => W0, () => 0);
+  const drawLong = strap(L2, 56, s1 => ARC - s1,
+    s1 => W0 * (s1 > L2 - .9 ? Math.sqrt(Math.max(.04, 1 - ((s1 - (L2 - .9)) / .9) ** 2)) : 1), // rounded tip
+    sg => .1 * (1 - ss(L1 - .25, L1 + .25, sg)));                                                    // tucked inside past the buckle
+  const m4 = new THREE.Matrix4(), e1 = new THREE.Vector2(), e2 = new THREE.Vector2();
   function draw() {
-    for (let side = 0; side < 2; side++) {
-      const pts = curves[side].points;
-      for (let i = 0; i <= NSIDE; i++) { const j = J[side ? NSIDE + 1 + i : i]; pts[i].set(0, j.x, j.y); }
-      curves[side].updateArcLengths();
-      for (const f of bands[side]) f(curves[side], side === 0);
-    }
-    vd.subVectors(J[NSIDE + 1], J[NSIDE]).normalize();
-    const y = (J[NSIDE].x + J[NSIDE + 1].x) / 2, z = (J[NSIDE].y + J[NSIDE + 1].y) / 2;
-    clasp.matrix.copy(m4.set(1, 0, 0, 0, 0, vd.x, -vd.y, y, 0, vd.y, vd.x, z, 0, 0, 0, 1));
+    drawShort(); drawLong();
+    at(L1, e1); at(L1 + .01, e2); e2.sub(e1).normalize();
+    buckleAnchor.matrix.copy(m4.set(1, 0, 0, 0, 0, e2.x, -e2.y, e1.x, 0, e2.y, e2.x, e1.y, 0, 0, 0, 1));
   }
   draw();
 
-  // ay, az: acceleration felt by the bracelet in the watch's frame (gravity minus the watch's own acceleration).
-  // A free chain can fold into a tangle the solver can't resolve (that's what made it jitter), so the loop flexes
-  // around its relaxed shape in two smooth modes, each a damped spring stepped at a fixed 120 Hz:
-  //   sway   - largest at the clasp, zero at the lugs; gravity sags it, the watch's motion swings it with a lag
-  //   ripple - the two halves move opposite ways; kicked by sudden changes in motion, then settles
-  // Afterwards every link is put back to its exact length and kept behind the case. Deterministic at any frame rate.
-  const total = lens.reduce((x, y) => x + y, 0), sway = [], ripple = [];
-  for (let i = 0, acc = 0; i < NJ; acc += lens[i++] || 0) { sway.push(Math.sin(Math.PI * acc / total)); ripple.push(Math.sin(2 * Math.PI * acc / total)); }
-  const A = new THREE.Vector2(), Av = new THREE.Vector2(), B = new THREE.Vector2(), Bv = new THREE.Vector2(), lastF = new THREE.Vector2();
+  // Two smooth flex modes (damped springs at a fixed 120 Hz): sway peaks at the back of the loop,
+  // ripple moves the halves in opposite ways when the motion changes. Deterministic, can't tangle.
   const K1 = 30, K2 = 60, H = 1 / 120;
   let pending = 0;
-  function fixLengths() {
-    for (let i = 0; i < last; i++) {
-      const a = J[i], b = J[i + 1], wa = i === 0 ? 0 : 1, wb = i + 1 === last ? 0 : 1;
-      vd.subVectors(b, a); const d = vd.length() || 1e-6, k = (d - lens[i]) / d / (wa + wb);
-      a.addScaledVector(vd, k * wa); b.addScaledVector(vd, -k * wb);
-    }
-    for (let i = 1; i < last; i++) if (Math.abs(J[i].x) < 1.02 && J[i].y > -.26) J[i].y = -.26;
-  }
   function update(dt, ay, az, zeta) {
     pending = Math.min(pending + dt, .1);
     const jy = (ay - lastF.x) / Math.max(dt, 1e-3), jz = (az - lastF.y) / Math.max(dt, 1e-3);
@@ -1445,81 +1593,11 @@ function buildWatch(renderer) {
       Bv.x += (clamp(jy, -60, 60) * .06 - K2 * B.x - c2 * Bv.x) * H; Bv.y += (clamp(jz, -60, 60) * .06 - K2 * B.y - c2 * Bv.y) * H;
       B.addScaledVector(Bv, H).clampLength(0, .18);
     }
-    for (let i = 0; i < NJ; i++) J[i].set(rest[i].x + A.x * sway[i] + B.x * ripple[i], rest[i].y + A.y * sway[i] + B.y * ripple[i]);
-    for (let it = 0; it < 6; it++) fixLengths();
     draw();
   }
 
-  return { root, hour, minute, second, bezel, lume, bracelet: { update } };
-}
-
-function canvasTex(c, aniso) {
-  const t = new THREE.CanvasTexture(c);
-  t.colorSpace = THREE.SRGBColorSpace;
-  t.anisotropy = aniso;
-  return t;
-}
-
-function dialCanvas() {
-  const S = 1024, R = S / 2, k = R / .765, c = document.createElement('canvas');
-  c.width = c.height = S;
-  const g = c.getContext('2d');
-  g.translate(R, R);
-  const rg = g.createRadialGradient(-R * .2, -R * .25, R * .05, 0, 0, R);
-  rg.addColorStop(0, '#3A6CCB'); rg.addColorStop(.55, '#1E4196'); rg.addColorStop(1, '#0B1D55');
-  g.fillStyle = rg; g.fillRect(-R, -R, S, S);
-  for (let i = 0; i < 720; i++) { // sunray brushing
-    const a = i / 720 * Math.PI * 2;
-    g.strokeStyle = i % 2 ? 'rgba(255,255,255,.04)' : 'rgba(0,0,40,.06)';
-    g.lineWidth = 2.2; g.beginPath(); g.moveTo(0, 0); g.lineTo(Math.cos(a) * R, Math.sin(a) * R); g.stroke();
-  }
-  g.fillStyle = 'rgba(255,255,255,.9)';
-  for (let i = 0; i < 60; i++) { // minute track
-    g.save(); g.rotate(i / 60 * Math.PI * 2);
-    const w = i % 5 ? 2 : 4; g.fillRect(-w / 2, -.745 * k, w, (i % 5 ? .03 : .045) * k);
-    g.restore();
-  }
-  g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillStyle = '#F4F6F8';
-  if ('letterSpacing' in g) g.letterSpacing = '5px';
-  g.font = `600 ${.098 * k}px "Cormorant Garamond", Georgia, serif`;
-  g.fillText('LONGINES', 0, -.34 * k);
-  if ('letterSpacing' in g) g.letterSpacing = '2px';
-  g.font = `500 ${.045 * k}px "Plus Jakarta Sans", sans-serif`;
-  g.fillText('HYDROCONQUEST', 0, .2 * k);
-  g.font = `400 ${.036 * k}px "Plus Jakarta Sans", sans-serif`;
-  g.fillText('30bar (300meter)', 0, .26 * k);
-  g.font = `500 ${.028 * k}px "Plus Jakarta Sans", sans-serif`;
-  g.fillText('SWISS', -.12 * k, .66 * k); g.fillText('MADE', .12 * k, .66 * k);
-  // date window at 3 o'clock
-  g.fillStyle = '#F7F7F4'; g.fillRect(.43 * k, -.055 * k, .14 * k, .11 * k);
-  g.strokeStyle = '#C9CED6'; g.lineWidth = 3; g.strokeRect(.43 * k, -.055 * k, .14 * k, .11 * k);
-  g.fillStyle = '#111'; if ('letterSpacing' in g) g.letterSpacing = '0px';
-  g.font = `600 ${.08 * k}px "Plus Jakarta Sans", sans-serif`;
-  g.fillText(String(new Date().getDate()), .5 * k, .005 * k);
-  return c;
-}
-
-function bezelCanvas() {
-  const S = 1024, R = S / 2, k = R / 1.0, c = document.createElement('canvas');
-  c.width = c.height = S;
-  const g = c.getContext('2d');
-  g.translate(R, R);
-  const rg = g.createRadialGradient(0, 0, .83 * k, 0, 0, k);
-  rg.addColorStop(0, '#1B3C8A'); rg.addColorStop(.5, '#2A55B0'); rg.addColorStop(1, '#173378');
-  g.fillStyle = rg; g.beginPath(); g.arc(0, 0, k, 0, Math.PI * 2); g.fill();
-  g.fillStyle = '#F2F4F7'; g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.font = `600 ${.1 * k}px "Plus Jakarta Sans", sans-serif`;
-  for (let i = 0; i < 60; i++) {
-    g.save(); g.rotate(i / 60 * Math.PI * 2);
-    if (i === 0) {
-      g.beginPath(); g.moveTo(-.06 * k, -.975 * k); g.lineTo(.06 * k, -.975 * k); g.lineTo(0, -.865 * k); g.closePath(); g.fill();
-      g.fillStyle = '#C9F5E4'; g.beginPath(); g.arc(0, -.94 * k, .02 * k, 0, Math.PI * 2); g.fill(); g.fillStyle = '#F2F4F7';
-    } else if (i % 10 === 0) g.fillText(String(i), 0, -.915 * k);
-    else if (i % 5 === 0) g.fillRect(-.012 * k, -.975 * k, .024 * k, .1 * k);
-    else if (i < 15) g.fillRect(-.005 * k, -.975 * k, .01 * k, .05 * k);
-    g.restore();
-  }
-  return c;
+  // the Présence has no lume or rotating bezel; keep inert stand-ins so the scene code stays the same
+  return { root, hour, minute, second, bezel: new THREE.Group(), lume: { emissiveIntensity: 0 }, bracelet: { update } };
 }
 </script>
 </body>
